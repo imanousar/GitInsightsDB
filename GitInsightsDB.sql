@@ -24,9 +24,9 @@ DROP TABLE IF EXISTS `commit`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `commit` (
   `hash` binary(20) NOT NULL,
+  `user_id` bigint(20) NOT NULL,
   `repo_id` bigint(20) NOT NULL,
   `timestamp` timestamp(3) NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `user_id` bigint(20) NOT NULL,
   `branch` varchar(50) NOT NULL,
   PRIMARY KEY (`hash`),
   KEY `userID_idx` (`user_id`),
@@ -54,9 +54,9 @@ DROP TABLE IF EXISTS `language - repo`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `language - repo` (
   `language` varchar(50) NOT NULL,
-  `lines_of_code` int(11) NOT NULL,
   `repo_id` bigint(20) NOT NULL,
-  PRIMARY KEY (`language`),
+  `lines_of_code` int(11) NOT NULL,
+  PRIMARY KEY (`language`,`repo_id`),
   KEY `repoID_idx` (`repo_id`),
   CONSTRAINT `IDrepo` FOREIGN KEY (`repo_id`) REFERENCES `repo` (`repo_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `languageName` FOREIGN KEY (`language`) REFERENCES `programming language` (`name`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -179,9 +179,9 @@ DROP TABLE IF EXISTS `repo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `repo` (
+  `repo_id` bigint(20) NOT NULL,
   `name` varchar(50) NOT NULL,
   `owner_id` bigint(20) NOT NULL,
-  `repo_id` bigint(20) NOT NULL,
   `stars` int(11) NOT NULL,
   `forks` int(11) NOT NULL,
   `is_public` tinyint(1) NOT NULL,
@@ -209,10 +209,10 @@ DROP TABLE IF EXISTS `team`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `team` (
+  `team_id` bigint(20) NOT NULL,
   `name` varchar(50) NOT NULL,
   `organization` varchar(50) NOT NULL,
   `description` text,
-  `team_id` bigint(20) NOT NULL,
   PRIMARY KEY (`team_id`),
   UNIQUE KEY `organization_UNIQUE` (`organization`),
   UNIQUE KEY `name_UNIQUE` (`name`),
@@ -237,11 +237,11 @@ DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user` (
+  `user_id` bigint(20) NOT NULL,
   `username` varchar(50) NOT NULL,
   `fullname` varchar(50) DEFAULT NULL,
   `date_of_birth` date NOT NULL,
   `email` varchar(50) NOT NULL,
-  `user_id` bigint(20) NOT NULL,
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `username_UNIQUE` (`username`),
   UNIQUE KEY `email_UNIQUE` (`email`),
@@ -293,4 +293,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-23 16:43:10
+-- Dump completed on 2019-11-24 20:50:44
