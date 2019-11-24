@@ -32,7 +32,7 @@ CREATE TABLE `commit` (
   `hash` binary(20) NOT NULL,
   `user_id` bigint(20) NOT NULL,
   `repo_id` bigint(20) NOT NULL,
-  `timestamp` timestamp(3) NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `branch` varchar(50) NOT NULL,
   PRIMARY KEY (`hash`),
   KEY `userID_idx` (`user_id`),
