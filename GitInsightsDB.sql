@@ -29,7 +29,7 @@ DROP TABLE IF EXISTS `commit`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `commit` (
-  `hash` binary(20) NOT NULL,
+  `hash` binary(40) NOT NULL,
   `user_id` bigint(20) NOT NULL,
   `repo_id` bigint(20) NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
