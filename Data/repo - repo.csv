@@ -1,0 +1,41 @@
+repo_id,name,owner_id,stars,forks,is_public
+1,DB Project,1,2,0,TRUE
+2,Math Project,1,3,0,TRUE
+3,Bachelor Thesis Code,2,5,0,TRUE
+4,ML-course,2,0,0,FALSE
+5,Test,1,0,2,TRUE
+6,kicad,2,3,2,TRUE
+7,Networks,3,0,0,FALSE
+8,portfolio,3,1,1,TRUE
+9,embedded systems,3,2,0,TRUE
+10,batmobile,7,0,0,FALSE
+11,batcopter,7,0,0,FALSE
+12,Arkam Hospital,7,123,4,TRUE
+13,Photos,9,340,0,TRUE
+14,Test,5,0,0,FALSE
+15,Test,6,1,0,TRUE
+16,premier league,18,520,42,TRUE
+17,Tennis,18,234,20,TRUE
+18,Live Bet,18,0,0,FALSE
+19,Sfhmmy,20,0,0,FALSE
+20,Doomsday,28,0,0,FALSE
+21,Suicide Squad,28,0,0,FALSE
+22,Pattern Recognition,17,120,23,TRUE
+23,Voice Recognition,23,532,53,TRUE
+24,Speech Recognition,23,434,43,TRUE
+25,African Languages,24,23,3,TRUE
+26,European Languages,24,234,55,TRUE
+27,Harvey Dent Creation,8,0,0,FALSE
+28,Bombs,8,0,0,FALSE
+29,Joker Plans,7,0,0,FALSE
+30,English ,24,34,55,TRUE
+31,NAO,20,20,22,TRUE
+32,Latex-template,30,25,10,TRUE
+33,Word-template,30,33,7,TRUE
+34,ROS,19,23,4,TRUE
+35,Alpha Bank ,16,0,0,FALSE
+36,Flask,11,0,0,FALSE
+37,Django,26,0,0,FALSE
+38,Flask,22,0,0,FALSE
+39,Trump,29,54,1,TRUE
+40,MySQL worbench,22,0,0,FALSE

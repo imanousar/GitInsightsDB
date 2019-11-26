@@ -1,0 +1,21 @@
+team_id,name,organization,description
+1,db-team,Auth-Uni,AUTh Uni DB team
+2,frontend,Facebook,Frontend developers at Facebook
+3,seo,Google,Search Engine Optimization engineers
+4,analytics,Facebook,Gather user analytics
+5,seo,The Guardian,Search Engine Optimization engineers
+6,transactions,Netflix,Responsible for economic transactions
+7,recommendations,Netflix,Building content recommendation engine
+8,sport,The Guardian,Responsible for sports webpage 
+9,pandora,Robotics-4-All,Building autonomous robots
+10,IoT,Robotics-4-All,Team working on Internet-of-Things aspects
+11,Students,Robotics-4-All,Student from University
+12,db-team,Netflix,Netflix DB team
+13,Google AI Research,Google,Building the future
+14,Google Translate,Google,Google translate's developers
+15,erasmus,Auth-Uni,Erasmus Department Website
+16,db-team,Twitter,Twitter DB-team
+17,security,Twitter,Twitter security-team
+18,Justice League,Netflix,Justice League Team
+19,Politics,The Guardian,Politics Webpage
+20,thesis-templates,Robotics-4-All,Templates for thesis document

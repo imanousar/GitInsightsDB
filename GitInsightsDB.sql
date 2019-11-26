@@ -42,42 +42,25 @@ CREATE TABLE `commit` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `commit`
---
-
-LOCK TABLES `commit` WRITE;
-/*!40000 ALTER TABLE `commit` DISABLE KEYS */;
-/*!40000 ALTER TABLE `commit` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
--- Table structure for table `language - repo`
+-- Table structure for table `language_repo`
 --
 
-DROP TABLE IF EXISTS `language - repo`;
+DROP TABLE IF EXISTS `language_repo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `language - repo` (
+CREATE TABLE `language_repo` (
   `language` varchar(50) NOT NULL,
   `repo_id` bigint(20) NOT NULL,
   `lines_of_code` int(11) NOT NULL,
   PRIMARY KEY (`language`,`repo_id`),
   KEY `repoID_idx` (`repo_id`),
   CONSTRAINT `IDrepo` FOREIGN KEY (`repo_id`) REFERENCES `repo` (`repo_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `languageName` FOREIGN KEY (`language`) REFERENCES `programming language` (`name`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `languageName` FOREIGN KEY (`language`) REFERENCES `programming_language` (`name`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `language - repo`
---
-
-LOCK TABLES `language - repo` WRITE;
-/*!40000 ALTER TABLE `language - repo` DISABLE KEYS */;
-INSERT INTO `language - repo` VALUES ('C#',156265,586),('JAVA',24,43234),('JAVA',156265,296),('JavaScript',5656,3231),('Python',5656,2312),('Python',156265,167);
-/*!40000 ALTER TABLE `language - repo` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `organization`
@@ -93,24 +76,15 @@ CREATE TABLE `organization` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `organization`
---
-
-LOCK TABLES `organization` WRITE;
-/*!40000 ALTER TABLE `organization` DISABLE KEYS */;
-INSERT INTO `organization` VALUES ('auth-uni','The Aristotle University of Thessaloniki.'),('facebook','The world\'s most popular social networking web site'),('google','Google <3 Open Source'),('Netflix',' Inc.'),('robotics-4-all','Robotics team focused on delivering enhanced functionality in/with robots'),('The Guardian','The source code of the world\'s leading liberal voice'),('Twitter',' Inc.');
-/*!40000 ALTER TABLE `organization` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
--- Table structure for table `organization - user`
+-- Table structure for table `organization_user`
 --
 
-DROP TABLE IF EXISTS `organization - user`;
+DROP TABLE IF EXISTS `organization_user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `organization - user` (
+CREATE TABLE `organization_user` (
   `org_name` varchar(50) NOT NULL,
   `user_id` bigint(20) NOT NULL,
   PRIMARY KEY (`org_name`,`user_id`),
@@ -120,15 +94,6 @@ CREATE TABLE `organization - user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `organization - user`
---
-
-LOCK TABLES `organization - user` WRITE;
-/*!40000 ALTER TABLE `organization - user` DISABLE KEYS */;
-INSERT INTO `organization - user` VALUES ('amazon',315346),('apple',86),('auth-uni',21),('facebook',32),('google',426),('google',3123),('netflix',562),('netflix',994);
-/*!40000 ALTER TABLE `organization - user` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `owner`
@@ -149,38 +114,20 @@ CREATE TABLE `owner` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `owner`
---
-
-LOCK TABLES `owner` WRITE;
-/*!40000 ALTER TABLE `owner` DISABLE KEYS */;
-INSERT INTO `owner` VALUES (13123,4234,'User'),(31311,41,'User'),(31589,123,'Team'),(51615,12,'Team'),(89415,123,'User'),(3124412,41,'Team');
-/*!40000 ALTER TABLE `owner` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
--- Table structure for table `programming language`
+-- Table structure for table `programming_language`
 --
 
-DROP TABLE IF EXISTS `programming language`;
+DROP TABLE IF EXISTS `programming_language`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `programming language` (
+CREATE TABLE `programming_language` (
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `programming language`
---
-
-LOCK TABLES `programming language` WRITE;
-/*!40000 ALTER TABLE `programming language` DISABLE KEYS */;
-INSERT INTO `programming language` VALUES ('C#'),('C++'),('JAVA'),('JavaScript'),('Python'),('R');
-/*!40000 ALTER TABLE `programming language` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `repo`
@@ -203,15 +150,6 @@ CREATE TABLE `repo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `repo`
---
-
-LOCK TABLES `repo` WRITE;
-/*!40000 ALTER TABLE `repo` DISABLE KEYS */;
-INSERT INTO `repo` VALUES (123,'ml-course',2323,0,0,'\0'),(4352,'cats-classifier',21,43,2,''),(6363,'skroutz-crawler',21,432,50,''),(156265,'Bachelor?s Thesis Code',21,0,0,'\0'),(456384,'DB Project',51615,3,1,''),(468758,'Math Project',51615,7,2,'');
-/*!40000 ALTER TABLE `repo` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `team`
@@ -232,15 +170,6 @@ CREATE TABLE `team` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `team`
---
-
-LOCK TABLES `team` WRITE;
-/*!40000 ALTER TABLE `team` DISABLE KEYS */;
-INSERT INTO `team` VALUES (1,'seo','amazon','Search Engine Optimization engineers'),(2,'frontend','facebook','Frontend developers at Facebook'),(43,'seo','google','Search Engine Optimization engineers'),(321,'db-team','auth-uni','AUTh Uni DB team'),(896,'transactions','amazon','Responsible for economic transactions'),(3213,'recommendations','netflix','Building content recommendation engine'),(328976,'analytics','facebook','Gather user analytics');
-/*!40000 ALTER TABLE `team` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `user`
@@ -262,24 +191,15 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `user`
---
-
-LOCK TABLES `user` WRITE;
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (123,'konsletr','Konstantinos Letros','1997-02-10','konsletr@ece.auth.gr '),(248,'imanousar','Ioannis Manousaridis','1997-01-11','imanousar@ece.auth.gr'),(358,'johnbin','Ioannis Binousidis','1988-07-02','binous@gmail.com'),(543,'georgepap','Georgios Papadopoulos','2001-03-03','geopap4@gmail.com'),(846,'dimpap','Dimitris Papagiannakis','1986-08-01','dimpap@gmail.com'),(981,'alexsah','Alexandros Sahinis','1997-06-09','alexsach@ece.auth.gr');
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
--- Table structure for table `user-team`
+-- Table structure for table `user_team`
 --
 
-DROP TABLE IF EXISTS `user-team`;
+DROP TABLE IF EXISTS `user_team`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `user-team` (
+CREATE TABLE `user_team` (
   `team_id` bigint(20) NOT NULL,
   `user_id` bigint(20) NOT NULL,
   PRIMARY KEY (`team_id`,`user_id`),
@@ -289,15 +209,7 @@ CREATE TABLE `user-team` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `user-team`
---
 
-LOCK TABLES `user-team` WRITE;
-/*!40000 ALTER TABLE `user-team` DISABLE KEYS */;
-INSERT INTO `user-team` VALUES (2,23),(2,8629),(2,9780),(43,58),(43,98632),(321,4321),(3124,524);
-/*!40000 ALTER TABLE `user-team` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
