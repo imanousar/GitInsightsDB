@@ -1,3 +1,5 @@
+SET FOREIGN_KEY_CHECKS=0;
+
 -- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
 -- Host: localhost    Database: gitinsightsdb
@@ -128,6 +130,15 @@ CREATE TABLE `programming_language` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Dumping data for table `programming_language`
+--
+
+LOCK TABLES `programming_language` WRITE;
+/*!40000 ALTER TABLE `programming_language` DISABLE KEYS */;
+INSERT INTO `programming_language` VALUES ('Assembly'),('Bash'),('C'),('C#'),('C++'),('CSS'),('Erlang'),('Go'),('HTML'),('Java'),('Javascript'),('Kotlin'),('Matlab'),('Octave'),('PHP'),('Python'),('R'),('Racket'),('Ruby'),('SQL'),('Swift'),('Tex'),('Visual Basic');
+/*!40000 ALTER TABLE `programming_language` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `repo`
