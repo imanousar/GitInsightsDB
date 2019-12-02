@@ -18,7 +18,6 @@
 DROP SCHEMA IF EXISTS `gitinsightsdb`;
 CREATE SCHEMA `gitinsightsdb`;
 USE `gitinsightsdb`;
-
 --
 -- Table structure for table `commit`
 --
@@ -213,6 +212,20 @@ INSERT INTO `repo` VALUES (1,'DB Project',1,2,0,''),(2,'Math Project',1,3,0,''
 UNLOCK TABLES;
 
 --
+-- Temporary view structure for view `repos_master_commits`
+--
+
+DROP TABLE IF EXISTS `repos_master_commits`;
+/*!50001 DROP VIEW IF EXISTS `repos_master_commits`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE VIEW `repos_master_commits` AS SELECT 
+ 1 AS `Repo`,
+ 1 AS `timestamp`,
+ 1 AS `hash`*/;
+SET character_set_client = @saved_cs_client;
+
+--
 -- Table structure for table `team`
 --
 
@@ -296,6 +309,87 @@ LOCK TABLES `user_team` WRITE;
 INSERT INTO `user_team` VALUES (1,5),(1,6),(2,8),(3,2),(3,4),(4,3),(4,4),(5,4),(5,5),(6,6),(6,7),(7,3),(7,4),(8,2),(9,2),(9,3),(10,2),(10,3),(11,2),(11,3),(12,1),(12,10),(13,3),(14,4),(15,5),(15,6),(16,2),(16,5),(16,6),(16,10),(17,7),(17,9),(18,1),(18,2),(18,3),(18,7),(18,9),(18,10),(19,5),(20,2),(20,3);
 /*!40000 ALTER TABLE `user_team` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Temporary view structure for view `users_latest_commits`
+--
+
+DROP TABLE IF EXISTS `users_latest_commits`;
+/*!50001 DROP VIEW IF EXISTS `users_latest_commits`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE VIEW `users_latest_commits` AS SELECT 
+ 1 AS `username`,
+ 1 AS `hash`,
+ 1 AS `timestamp`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `users_no_of_master_commits_in_2019`
+--
+
+DROP TABLE IF EXISTS `users_no_of_master_commits_in_2019`;
+/*!50001 DROP VIEW IF EXISTS `users_no_of_master_commits_in_2019`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE VIEW `users_no_of_master_commits_in_2019` AS SELECT 
+ 1 AS `username`,
+ 1 AS `No_of_master_commits`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Final view structure for view `repos_master_commits`
+--
+
+/*!50001 DROP VIEW IF EXISTS `repos_master_commits`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `repos_master_commits` AS select `repo`.`name` AS `Repo`,`commit`.`timestamp` AS `timestamp`,`commit`.`hash` AS `hash` from (`repo` straight_join `commit` on((`repo`.`repo_id` = `commit`.`repo_id`))) where (`commit`.`branch` = 'master') */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `users_latest_commits`
+--
+
+/*!50001 DROP VIEW IF EXISTS `users_latest_commits`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `users_latest_commits` AS select `user`.`username` AS `username`,`o`.`hash` AS `hash`,`o`.`timestamp` AS `timestamp` from ((`commit` `o` left join `commit` `b` on(((`o`.`user_id` = `b`.`user_id`) and (`o`.`timestamp` < `b`.`timestamp`)))) join `user` on((`user`.`user_id` = `o`.`user_id`))) where isnull(`b`.`timestamp`) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `users_no_of_master_commits_in_2019`
+--
+
+/*!50001 DROP VIEW IF EXISTS `users_no_of_master_commits_in_2019`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `users_no_of_master_commits_in_2019` AS select `user`.`username` AS `username`,count(`commit`.`hash`) AS `No_of_master_commits` from (`user` straight_join `commit` on((`commit`.`user_id` = `user`.`user_id`))) where ((`commit`.`branch` = 'master') and (`commit`.`timestamp` >= '2019-01-01 00:00:00')) group by `user`.`username` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -306,4 +400,5 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-26 13:34:34
+-- Dump completed on 2019-12-02 15:49:44
+
