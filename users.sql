@@ -36,5 +36,3 @@ GRANT SELECT, SHOW VIEW ON gitinsightdb.* TO 'reader'@'%';
 CREATE USER 'writer'@'localhost' IDENTIFIED BY 'writer';
 GRANT INSERT, UPDATE ON gitinsightdb.* TO 'writer'@'localhost';
 #--------------------------------------------
-
-
