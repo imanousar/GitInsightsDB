@@ -279,7 +279,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'konsletr','Konstantinos Letros','0000-00-00','konsletr@ece.auth.gr'),(2,'imanousar','Ioannis Manousaridis','0000-00-00','imanousar@ece.auth.gr'),(3,'alexsah','Alexandros Sahinis','0000-00-00','alexsach@ece.auth.gr'),(4,'dimpap','Dimitris Papagiannakis','0000-00-00','dimpap@gmail.com'),(5,'georgepap','Georgios Papadopoulos','0000-00-00','geopap4@gmail.com'),(6,'johnbin','Ioannis Binousidis','0000-00-00','binous@gmail.com'),(7,'batman','Bruce Wayne','0000-00-00','batman@gmail.com'),(8,'joker','Arthur Fleck','0000-00-00','joker@gmail.com'),(9,'superman','Clark Kent','0000-00-00','superman@gmail.com'),(10,'flash','Barry Allen','0000-00-00','flash@gmail.com');
+INSERT INTO `user` VALUES (1,'konsletr','Konstantinos Letros','1997-02-10','konsletr@ece.auth.gr'),(2,'imanousar','Ioannis Manousaridis','1997-01-11','imanousar@ece.auth.gr'),(3,'alexsah','Alexandros Sahinis','1997-06-09','alexsach@ece.auth.gr'),(4,'dimpap','Dimitris Papagiannakis','1986-08-01','dimpap@gmail.com'),(5,'georgepap','Georgios Papadopoulos','2001-03-03','geopap4@gmail.com'),(6,'johnbin','Ioannis Binousidis','1988-07-02','binous@gmail.com'),(7,'batman','Bruce Wayne','1980-02-01','batman@gmail.com'),(8,'joker','Arthur Fleck','1964-02-06','joker@gmail.com'),(9,'superman','Clark Kent','1974-01-09','superman@gmail.com'),(10,'flash','Barry Allen','1989-09-11','flash@gmail.com');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -400,5 +400,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-02 15:49:44
-
+-- Dump completed on 2019-12-02 15:58:56
