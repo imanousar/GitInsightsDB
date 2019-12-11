@@ -111,7 +111,7 @@ for i = 1 : length(repo_id)
     h=randi([0,23]);
     min=randi([0,59]);
     s=randi([0,59]);
-    fprintf("%02d/%02d/%02d %02d:%02d:%02d\n",y,m,d,h,min,s)
+    fprintf("%02d-%02d-%02d %02d:%02d:%02d\n",y,m,d,h,min,s)
 end
 
 function X = repo2user(repoIDownerID,orgIDuserID,i)
