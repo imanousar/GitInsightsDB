@@ -1,40 +1,40 @@
-1,DB Project,1,2,0,TRUE,2019/12/03 20:54
-2,Math Project,1,3,0,TRUE,2017/08/11 15:45
-3,Bachelor Thesis Code,2,5,0,TRUE,2018/04/24 10:37
-4,ML-course,2,0,0,FALSE,2016/05/16 10:05
-5,Test,1,0,2,TRUE,2015/06/02 23:31
-6,kicad,2,3,2,TRUE,2016/11/08 21:53
-7,Networks,3,0,0,FALSE,2018/07/26 5:00
-8,portfolio,3,1,1,TRUE,2016/03/18 7:49
-9,embedded systems,3,2,0,TRUE,2019/05/23 3:37
-10,batmobile,7,0,0,FALSE,2015/07/25 6:14
-11,batcopter,7,0,0,FALSE,2017/02/07 15:33
-12,Arkam Hospital,7,123,4,TRUE,2018/09/08 9:21
-13,Photos,9,340,0,TRUE,2015/11/09 11:47
-14,Test,5,0,0,FALSE,2015/09/04 22:53
-15,Test,6,1,0,TRUE,2018/12/04 18:49
-16,premier league,15,520,42,TRUE,2015/06/01 7:08
-17,Tennis,15,234,20,TRUE,2017/10/12 12:55
-18,Live Bet,15,0,0,FALSE,2017/11/02 19:20
-19,Sfhmmy,11,0,0,FALSE,2019/05/05 0:57
-20,Doomsday,16,0,0,FALSE,2019/12/20 22:15
-21,Suicide Squad,16,0,0,FALSE,2019/04/03 18:05
-22,Pattern Recognition,16,120,23,TRUE,2017/08/05 12:38
-23,Voice Recognition,14,532,53,TRUE,2017/11/04 10:39
-24,Speech Recognition,14,434,43,TRUE,2019/09/06 13:52
-25,African Languages,14,23,3,TRUE,2018/11/24 3:11
-26,European Languages,14,234,55,TRUE,2015/01/17 14:55
-27,Harvey Dent Creation,8,0,0,FALSE,2016/06/08 17:07
-28,Bombs,8,0,0,FALSE,2019/09/10 14:28
-29,Joker Plans,7,0,0,FALSE,2019/09/08 23:11
-30,English,14,34,55,TRUE,2017/03/06 16:10
-31,NAO,11,20,22,TRUE,2016/06/26 5:00
-32,Latex-template,11,25,10,TRUE,2018/07/15 2:59
-33,Word-template,11,33,7,TRUE,2018/05/01 13:30
-34,ROS,11,23,4,TRUE,2015/11/02 7:47
-35,Alpha Bank,16,0,0,FALSE,2017/10/21 15:39
-36,Flask,12,0,0,FALSE,2017/05/19 10:07
-37,Django,17,0,0,FALSE,2017/05/12 18:31
-38,Flask,16,0,0,FALSE,2015/04/13 15:42
-39,Trump,15,54,1,TRUE,2019/02/27 3:58
-40,MySQL worbench,16,0,0,FALSE,2016/01/09 19:04
+12,db-team,11/9/2013 7:41,AUTh Uni DB team,,,
+13,frontend,1/14/2013 3:15,Frontend developers at Facebook,,,
+14,seo,2/16/2014 7:22,Search Engine Optimization engineers,,,
+13,analytics,12/9/2013 15:12,Gather user analytics,,,
+15,seo,10/8/2013 8:10,Search Engine Optimization engineers,,,
+16,transactions,5/22/2014 5:50,Responsible for economic transactions,,,
+16,recommendations,11/5/2013 20:27,Building content recommendation engine,,,
+15,sport,12/16/2014 15:34,Responsible for sports webpage,,,
+11,pandora,6/3/2013 5:45,Building autonomous robots,,,
+11,IoT,5/9/2013 20:54,Team working on Internet-of-Things aspects,,,
+11,Students,5/7/2014 12:32,Student from University,,,
+16,db-team,6/7/2011 14:01,Netflix DB team,,,
+14,Google AI Research,4/17/2014 8:08,Building the future,,,
+14,Google Translate,8/19/2014 17:50,Google translate's developers,,,
+12,erasmus,5/23/2014 4:19,Erasmus Department Website,,,
+17,db-team,3/28/2013 1:25,Twitter DB-team,,,
+17,security,12/2/2013 14:59,Twitter security-team,,,
+16,Justice League,9/12/2011 4:01,Justice League Team,,,
+15,Politics,11/15/2014 21:58,Politics Webpage,,,
+11,thesis-templates,12/17/2011 21:25,Templates for thesis document,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
