@@ -1,6 +1,5 @@
+
 SET FOREIGN_KEY_CHECKS=0;
-
-
 -- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
 -- Host: localhost    Database: gitinsightsdb
@@ -108,6 +107,7 @@ CREATE TABLE `issue` (
 
 LOCK TABLES `issue` WRITE;
 /*!40000 ALTER TABLE `issue` DISABLE KEYS */;
+INSERT INTO `issue` VALUES (1,'missing installation instructions','Percipio affectus sequatur iii habentur impressa meo.','open','2018-04-07 03:57:00','documentation',7),(1,'users authentication','Et lectores earundem aliasque de immobile putandum me.','open','2018-03-16 21:07:00','bug',1),(1,'users privileges','Ex in si volent negare possum.','open','2017-03-19 01:04:00','bug',2),(2,'how can I use the code?','Et lectores earundem aliasque de immobile putandum me.','closed','2018-03-13 01:22:00','help',2),(2,'wrong use of DFT','Novi vel has fal sine dat etsi. ','open','2017-06-10 03:55:00','help',5),(2,'wrong use of SFT','Factae imo partem absque seriem meo dictis. Sequentium rem cogitantur deo existentia theologiae. ','open','2018-08-02 01:43:00','help',3),(3,'IEEE format missing','Ex in si volent negare possum.','closed','2019-11-16 17:42:00','documentation',3),(6,'add capacitor','Factae imo partem absque seriem meo dictis. Sequentium rem cogitantur deo existentia theologiae. ','closed','2019-02-08 08:34:00','feature',3),(6,'add MOSFET for protection','Novi vel has fal sine dat etsi. ','closed','2019-05-06 19:17:00','feature',4),(12,'Jokers conidition','Ab ad noctu ac ut veras terra ausit nudam.','open','2017-11-12 11:31:00','other',10),(17,'tsitsipas live statistics','Ratione probant sciatur id ex docetur replere is.','closed','2017-05-10 12:39:00','feature',4),(17,'tsitsipas live statistics vs Federer','Ab ad noctu ac ut veras terra ausit nudam.','closed','2017-12-13 16:31:00','feature',2),(17,'tsitsipas live statistics vs Jokovic','Et lectores earundem aliasque de immobile putandum me.','closed','2019-08-02 09:53:00','feature',2),(17,'tsitsipas live statistics vs Nadal','Percipio affectus sequatur iii habentur impressa meo.','closed','2018-09-26 18:08:00','feature',1),(22,'SVD algorithm error','Et lectores earundem aliasque de immobile putandum me.','open','2019-06-03 18:16:00','bug',5),(22,'SVM algorithm error','Factae imo partem absque seriem meo dictis. Sequentium rem cogitantur deo existentia theologiae. ','open','2018-02-18 06:21:00','bug',7),(24,'Add component','Ab ad noctu ac ut veras terra ausit nudam.','open','2017-01-20 20:44:00','other',8),(24,'add new libraries','Percipio affectus sequatur iii habentur impressa meo.','closed','2018-01-17 11:21:00','feature',5),(24,'add new library','Ex in si volent negare possum.','open','2018-11-05 01:30:00','feature',7),(25,'Add component','Novi vel has fal sine dat etsi. ','open','2019-02-17 03:01:00','other',9),(25,'missing countries','Et lectores earundem aliasque de immobile putandum me.','open','2018-08-08 22:17:00','feature',8),(26,'Add component','Factae imo partem absque seriem meo dictis. Sequentium rem cogitantur deo existentia theologiae. ','open','2019-07-24 01:37:00','other',7),(26,'add instructions ','Ratione probant sciatur id ex docetur replere is.','open','2017-08-24 15:15:00','documentation',5),(26,'barcelona wrong statistics','Factae imo partem absque seriem meo dictis. Sequentium rem cogitantur deo existentia theologiae. ','open','2019-03-23 21:16:00','bug',3),(26,'real wrong statistics','Ab ad noctu ac ut veras terra ausit nudam.','open','2018-05-14 19:57:00','bug',3),(26,'unit_tests','Ex in si volent negare possum.','closed','2017-03-06 07:35:00','other',4),(26,'unit_tests_2','Ratione probant sciatur id ex docetur replere is.','open','2018-10-03 14:38:00','other',8),(30,'missing albanian words','Et lectores earundem aliasque de immobile putandum me.','open','2017-09-05 11:36:00','bug',10),(30,'missing greek words','Percipio affectus sequatur iii habentur impressa meo.','open','2017-06-01 07:33:00','bug',10),(30,'missing polish words','Ex in si volent negare possum.','open','2017-11-11 07:19:00','bug',9),(30,'missing turkish words','Ratione probant sciatur id ex docetur replere is.','open','2017-12-16 06:42:00','bug',5),(31,'MDE ','Novi vel has fal sine dat etsi. ','open','2018-09-17 15:35:00','bug',2),(39,'live images 1','Ratione probant sciatur id ex docetur replere is.','open','2017-03-07 02:14:00','documentation',4),(39,'live images 2','Novi vel has fal sine dat etsi. ','open','2019-05-09 06:18:00','bug',6);
 /*!40000 ALTER TABLE `issue` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -133,6 +133,7 @@ CREATE TABLE `language_repo` (
 
 LOCK TABLES `language_repo` WRITE;
 /*!40000 ALTER TABLE `language_repo` DISABLE KEYS */;
+INSERT INTO `language_repo` VALUES ('SQL',1,543),('Matlab',2,343),('Tex',3,234),('Matlab',4,423),('Python',4,433),('Python',5,323),('Tex',6,23),('JAVA',7,543),('HTML',8,120),('CSS',8,234),('C#',9,234),('C',10,256),('C++',10,245),('Python',10,235),('Matlab',10,230),('C',11,102),('C++',11,150),('Python',11,92),('Matlab',11,125),('Tex',12,124),('Tex',13,156),('C++',14,1),('R',15,1),('CSS',16,420),('HTML',16,320),('Tex',16,134),('CSS',17,503),('HTML',17,560),('Tex',17,560),('CSS',18,140),('HTML',18,530),('Tex',18,503),('Python',19,450),('Tex',20,653),('Tex',21,356),('Python',22,653),('R',22,603),('Python',23,842),('R',23,269),('Python',24,253),('R',24,182),('Python',25,182),('Python',26,593),('C++',27,392),('Tex',28,385),('Tex',29,832),('Python',30,293),('JAVA',31,292),('Python',31,394),('Tex',32,392),('Tex',33,124),('C++',34,353),('C#',35,340),('Python',35,321),('Python',36,394),('Python',37,395),('Python',38,320),('HTML',39,215),('CSS',39,320),('SQL',40,231);
 /*!40000 ALTER TABLE `language_repo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -443,4 +444,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-11 13:54:59
+-- Dump completed on 2019-12-11 14:35:49
