@@ -99,7 +99,7 @@ repo_id
 
 fprintf("\nRandom Timestamps for Commit\n\n\n")
 for i = 1 : length(repo_id)
-    y=randi([2010,2019]);
+    y=randi([2010,2013]);
     m=randi([1,12]);
     d=randi([1,28]);
     h=randi([0,23]);

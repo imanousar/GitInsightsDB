@@ -1,4 +1,4 @@
-
+SET FOREIGN_KEY_CHECKS=0;
 -- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
 -- Host: localhost    Database: gitinsightsdb
@@ -40,15 +40,7 @@ CREATE TABLE `commit` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `commit`
---
 
-LOCK TABLES `commit` WRITE;
-/*!40000 ALTER TABLE `commit` DISABLE KEYS */;
-INSERT INTO `commit` VALUES ('03D67C263C27A453EF65B29E30334727333CCBCD',12,39,'2010-04-10 13:08:43','master'),('6D613A1EE01EEC4C0F8CA66DF0DB71DCA0C6E1CF',2,30,'2014-07-07 08:57:32','master'),('7971E6A051104074FDAE0F02322417B6EB5695A2',12,24,'2010-04-22 21:55:43','master'),('B47F363E2B430C0647F14DEEA3ECED9B0EF300CE',2,10,'2015-03-14 12:40:23','master'),('CD1B646EBD1F6844C60DD91951C6867E43857114',12,30,'2013-12-02 19:54:47','master');
-/*!40000 ALTER TABLE `commit` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `commit_file`
@@ -306,15 +298,6 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `user`
---
-
-LOCK TABLES `user` WRITE;
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (2,'rt','tt','2012-02-20','gfs','2012-12-11 22:00:00'),(12,'te','te','2012-02-20','sada','2012-12-11 22:00:00');
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `user_team`

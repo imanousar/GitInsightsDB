@@ -1,20 +1,20 @@
-1,db-team,Auth-Uni,AUTh Uni DB team
-2,frontend,Facebook,Frontend developers at Facebook
-3,seo,Google,Search Engine Optimization engineers
-4,analytics,Facebook,Gather user analytics
-5,seo,The Guardian,Search Engine Optimization engineers
-6,transactions,Netflix,Responsible for economic transactions
-7,recommendations,Netflix,Building content recommendation engine
-8,sport,The Guardian,Responsible for sports webpage 
-9,pandora,Robotics-4-All,Building autonomous robots
-10,IoT,Robotics-4-All,Team working on Internet-of-Things aspects
-11,Students,Robotics-4-All,Student from University
-12,db-team,Netflix,Netflix DB team
-13,Google AI Research,Google,Building the future
-14,Google Translate,Google,Google translate's developers
-15,erasmus,Auth-Uni,Erasmus Department Website
-16,db-team,Twitter,Twitter DB-team
-17,security,Twitter,Twitter security-team
-18,Justice League,Netflix,Justice League Team
-19,Politics,The Guardian,Politics Webpage
-20,thesis-templates,Robotics-4-All,Templates for thesis document
+12,db-team,2013/09/11 7:41,AUTh Uni DB team
+13,frontend,2013/01/14 3:15,Frontend developers at Facebook
+14,seo,2014/02/16 7:22,Search Engine Optimization engineers
+13,analytics,2013/09/12 15:12,Gather user analytics
+15,seo,2013/08/10 8:10,Search Engine Optimization engineers
+16,transactions,2014/05/22 5:50,Responsible for economic transactions
+16,recommendations,2013/05/11 20:27,Building content recommendation engine
+15,sport,2014/12/16 15:34,Responsible for sports webpage 
+11,pandora,2013/03/06 5:45,Building autonomous robots
+11,IoT,2013/09/05 20:54,Team working on Internet-of-Things aspects
+11,Students,2014/07/05 12:32,Student from University
+16,db-team,2011/07/06 14:01,Netflix DB team
+14,Google AI Research,2014/04/17 8:08,Building the future
+14,Google Translate,2014/08/19 17:50,Google translate's developers
+12,erasmus,2014/05/23 4:19,Erasmus Department Website
+17,db-team,2013/03/28 1:25,Twitter DB-team
+17,security,2013/02/12 14:59,Twitter security-team
+16,Justice League,2011/12/09 4:01,Justice League Team
+15,Politics,2014/11/15 21:58,Politics Webpage
+11,thesis-templates,2011/12/17 21:25,Templates for thesis document
