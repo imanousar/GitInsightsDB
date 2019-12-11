@@ -1,4 +1,3 @@
-
 SET FOREIGN_KEY_CHECKS=0;
 -- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
@@ -350,7 +349,7 @@ CREATE TABLE `user_team` (
 
 LOCK TABLES `user_team` WRITE;
 /*!40000 ALTER TABLE `user_team` DISABLE KEYS */;
-INSERT INTO `user_team` VALUES (11,2,'IoT'),(11,2,'pandora'),(11,2,'Students'),(11,2,'thesis-templates'),(11,3,'IoT'),(11,3,'pandora'),(11,3,'Students'),(11,3,'thesis-templates'),(12,5,'db-team'),(12,5,'erasmus'),(12,6,'db-team'),(12,6,'erasmus'),(13,3,'analytics'),(13,4,'analytics'),(13,8,'frontend'),(14,2,'seo'),(14,3,'Google AI Research'),(14,4,'Google Translate'),(14,4,'seo'),(15,2,'sport'),(15,4,'seo'),(15,5,'Politics'),(15,5,'seo'),(16,1,'db-team'),(16,1,'Justice League'),(16,2,'Justice League'),(16,3,'Justice League'),(16,3,'recommendations'),(16,4,'recommendations'),(16,6,'transactions'),(16,7,'Justice League'),(16,7,'transactions'),(16,9,'Justice League'),(16,10,'db-team'),(16,10,'Justice League'),(17,2,'db-team'),(17,5,'db-team'),(17,6,'db-team'),(17,7,'db-team'),(17,9,'db-team'),(17,10,'db-team');
+INSERT INTO `user_team` VALUES (11,2,'IoT'),(11,2,'pandora'),(11,2,'Students'),(11,2,'thesis-templates'),(11,3,'IoT'),(11,3,'pandora'),(11,3,'Students'),(11,3,'thesis-templates'),(12,5,'db-team'),(12,5,'erasmus'),(12,6,'db-team'),(12,6,'erasmus'),(13,3,'analytics'),(13,3,'frontend'),(13,4,'analytics'),(13,8,'frontend'),(14,2,'seo'),(14,3,'Google AI Research'),(14,4,'Google Translate'),(14,4,'seo'),(15,2,'sport'),(15,4,'seo'),(15,5,'Politics'),(15,5,'seo'),(16,1,'db-team'),(16,1,'Justice League'),(16,2,'Justice League'),(16,3,'Justice League'),(16,3,'recommendations'),(16,4,'recommendations'),(16,6,'transactions'),(16,7,'Justice League'),(16,7,'transactions'),(16,9,'Justice League'),(16,10,'db-team'),(16,10,'Justice League'),(17,2,'db-team'),(17,5,'db-team'),(17,6,'db-team'),(17,7,'db-team'),(17,9,'db-team'),(17,10,'db-team');
 /*!40000 ALTER TABLE `user_team` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -444,4 +443,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-11 14:35:49
+-- Dump completed on 2019-12-11 17:12:25
