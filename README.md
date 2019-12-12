@@ -1,1 +1,1 @@
-# GitInisghtsDB
+# GitInsightsDB
