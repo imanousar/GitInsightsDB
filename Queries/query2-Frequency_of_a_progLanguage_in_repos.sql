@@ -1,4 +1,4 @@
-# How often a language appear - Apply for Java
+# How often a language appears - Apply for Java
 
 SELECT 
     COUNT(*)
