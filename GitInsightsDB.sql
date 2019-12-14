@@ -1,6 +1,6 @@
--- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.28, for Linux (x86_64)
 --
--- Host: localhost    Database: gitinsightsdb
+-- Host: 127.0.0.1    Database: gitinsightsdb
 -- ------------------------------------------------------
 -- Server version	5.5.57-MariaDB
 
@@ -35,6 +35,8 @@ CREATE TABLE `commit` (
   PRIMARY KEY (`hash`,`repo_id`),
   KEY `repoID_idx` (`repo_id`,`user_id`),
   KEY `userID_idx` (`user_id`),
+  CONSTRAINT `fk_commit_1` FOREIGN KEY (`repo_id`) REFERENCES `repo` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  CONSTRAINT `userID` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE SET NULL ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -89,8 +91,11 @@ CREATE TABLE `issue` (
   `state` enum('open','closed') NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `label` enum('bug','feature','documentation','help','other') NOT NULL,
+  `author` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`repo_id`,`title`),
   KEY `author_fk_idx` (`author`),
+  CONSTRAINT `author_fk` FOREIGN KEY (`author`) REFERENCES `user` (`id`) ON DELETE SET NULL ON UPDATE NO ACTION,
+  CONSTRAINT `repo_id_fk` FOREIGN KEY (`repo_id`) REFERENCES `repo` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -115,8 +120,9 @@ CREATE TABLE `language_repo` (
   `language` varchar(45) NOT NULL,
   `repo_id` bigint(20) NOT NULL,
   `lines_of_code` int(11) NOT NULL,
+  PRIMARY KEY (`language`,`repo_id`),
   KEY `repoID_idx` (`repo_id`),
-  CONSTRAINT `IDrepo` FOREIGN KEY (`repo_id`) REFERENCES `repo` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `IDrepo` FOREIGN KEY (`repo_id`) REFERENCES `repo` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -199,7 +205,7 @@ CREATE TABLE `organization` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name_UNIQUE` (`name`),
-  CONSTRAINT `owner_id_fk` FOREIGN KEY (`id`) REFERENCES `owner` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `owner_id_fk` FOREIGN KEY (`id`) REFERENCES `owner` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -225,8 +231,8 @@ CREATE TABLE `organization_user` (
   `user_id` bigint(20) NOT NULL,
   PRIMARY KEY (`org_id`,`user_id`),
   KEY `ID_user_idx` (`user_id`),
-  CONSTRAINT `ID_user_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `org_id_fk` FOREIGN KEY (`org_id`) REFERENCES `organization` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `ID_user_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  CONSTRAINT `org_id_fk` FOREIGN KEY (`org_id`) REFERENCES `organization` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -284,8 +290,8 @@ CREATE TABLE `repo` (
   UNIQUE KEY `idx_repo_name_owner_id` (`name`,`owner_id`),
   KEY `owner_id` (`owner_id`),
   KEY `name` (`name`),
-  CONSTRAINT `owner` FOREIGN KEY (`owner_id`) REFERENCES `owner` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=214 DEFAULT CHARSET=utf8;
+  CONSTRAINT `owner` FOREIGN KEY (`owner_id`) REFERENCES `owner` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -358,7 +364,7 @@ CREATE TABLE `team` (
   `description` text,
   PRIMARY KEY (`org_id`,`name`),
   KEY `name` (`name`),
-  CONSTRAINT `organization` FOREIGN KEY (`org_id`) REFERENCES `organization` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `organization` FOREIGN KEY (`org_id`) REFERENCES `organization` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -389,7 +395,7 @@ CREATE TABLE `user` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `username_UNIQUE` (`username`),
   UNIQUE KEY `email_UNIQUE` (`email`),
-  CONSTRAINT `owner_id` FOREIGN KEY (`id`) REFERENCES `owner` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `owner_id` FOREIGN KEY (`id`) REFERENCES `owner` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -457,9 +463,9 @@ CREATE TABLE `user_team` (
   PRIMARY KEY (`org_id`,`user_id`,`team_name`),
   KEY `id_user_idx` (`user_id`),
   KEY `name_team_fk_idx` (`team_name`),
-  CONSTRAINT `id_user_fk_team` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `id_org_fk_team` FOREIGN KEY (`org_id`) REFERENCES `team` (`org_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `name_team_fk_team` FOREIGN KEY (`team_name`) REFERENCES `team` (`name`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `id_org_fk_team` FOREIGN KEY (`org_id`) REFERENCES `team` (`org_id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  CONSTRAINT `id_user_fk_team` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  CONSTRAINT `name_team_fk_team` FOREIGN KEY (`team_name`) REFERENCES `team` (`name`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -474,7 +480,7 @@ INSERT INTO `user_team` VALUES (11,2,'IoT'),(11,2,'pandora'),(11,2,'Students'),(
 UNLOCK TABLES;
 
 --
--- Temporary view structure for view `users_latest_commits`
+-- Temporary table structure for view `users_latest_commits`
 --
 
 DROP TABLE IF EXISTS `users_latest_commits`;
@@ -488,7 +494,7 @@ SET character_set_client = utf8;
 SET character_set_client = @saved_cs_client;
 
 --
--- Temporary view structure for view `users_master_commits_in_2019`
+-- Temporary table structure for view `users_master_commits_in_2019`
 --
 
 DROP TABLE IF EXISTS `users_master_commits_in_2019`;
@@ -563,4 +569,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-11 22:03:43
+-- Dump completed on 2019-12-14  2:42:08
