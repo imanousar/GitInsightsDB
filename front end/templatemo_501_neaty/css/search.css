@@ -820,8 +820,8 @@ legend {
 
 .s007 form {
   width: 100%;
-  max-width: 790px;
-  margin: 0;
+  max-width: 770px;
+  margin: auto;
 }
 
 .s007 form .inner-form {
@@ -1182,4 +1182,18 @@ legend {
     width: 100%;
     margin-bottom: 20px;
   }
+}
+
+.s007 .card-4 {
+  background: #fff;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+}
+s .card-4 .card-body {
+  padding: 57px 65px;
+  padding-bottom: 65px;
 }
