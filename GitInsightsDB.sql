@@ -28,15 +28,13 @@ DROP TABLE IF EXISTS `commit`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `commit` (
   `hash` binary(40) NOT NULL,
-  `user_id` bigint(20) NOT NULL,
+  `user_id` bigint(20) DEFAULT NULL,
   `repo_id` bigint(20) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `branch` varchar(45) NOT NULL,
-  PRIMARY KEY (`hash`),
+  PRIMARY KEY (`hash`,`repo_id`),
+  KEY `repoID_idx` (`repo_id`,`user_id`),
   KEY `userID_idx` (`user_id`),
-  KEY `repoID_idx` (`repo_id`),
-  CONSTRAINT `userID` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `repoID` FOREIGN KEY (`repo_id`) REFERENCES `repo` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
