@@ -16,9 +16,7 @@ FROM
         JOIN
     user_team ON user_team.user_id = user.id
         JOIN
-    team ON team.name = user_team.team_name and team.org_id = user_team.org_id
-        JOIN
-    organization ON organization.id = team.org_id
+    organization ON organization.id = user_team.org_id
 WHERE
     username = 'batman')
     
