@@ -62,7 +62,8 @@ CREATE TABLE `commit_file` (
   `repo_id` bigint(20) NOT NULL,
   `filename` varchar(45) NOT NULL,
   `action` enum('create','update','delete','rename') NOT NULL,
-  PRIMARY KEY (`hash`,`repo_id`),
+  PRIMARY KEY (`hash`,`repo_id`,`filename`),
+  KEY `repo_id_idx` (`repo_id`),
   CONSTRAINT `fk_commit` FOREIGN KEY (`hash`, `repo_id`) REFERENCES `commit` (`hash`, `repo_id`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
