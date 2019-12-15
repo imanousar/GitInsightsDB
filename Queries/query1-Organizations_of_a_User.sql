@@ -18,5 +18,5 @@ FROM
         JOIN
     organization ON organization.id = user_team.org_id
 WHERE
-    username = 'batman')
+    username = 'batman');
     
