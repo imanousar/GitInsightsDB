@@ -5,4 +5,4 @@ SELECT
 FROM
     language_repo
 WHERE
-    language = 'Java'
+    language = 'Java';
