@@ -1,4 +1,5 @@
-# Apply for user konsletr
+# Bug issues on repos owned by a user - Apply for user konsletr
+
 SELECT issue.*, repo.name, user.username
 FROM 
     repo 
