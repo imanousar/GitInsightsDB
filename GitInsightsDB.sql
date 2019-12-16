@@ -61,7 +61,7 @@ DELIMITER ;;
 /*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `gitinsightsdb`.`commit_BEFORE_INSERT` BEFORE INSERT ON `commit` FOR EACH ROW
 BEGIN
  IF (NEW.created_at > CURRENT_TIMESTAMP()) THEN
-	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "created_at cannot be in the future";
+	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "created_at cannot be in the future.";
  END IF;
 END */;;
 DELIMITER ;
@@ -81,7 +81,7 @@ DELIMITER ;;
 /*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `gitinsightsdb`.`commit_BEFORE_UPDATE` BEFORE UPDATE ON `commit` FOR EACH ROW
 BEGIN
  IF (NEW.created_at > CURRENT_TIMESTAMP()) THEN
-	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "created_at cannot be in the future";
+	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "created_at cannot be in the future.";
  END IF;
 END */;;
 DELIMITER ;
@@ -161,7 +161,7 @@ DELIMITER ;;
 /*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `gitinsightsdb`.`issue_BEFORE_INSERT` BEFORE INSERT ON `issue` FOR EACH ROW
 BEGIN
  IF (NEW.created_at > CURRENT_TIMESTAMP()) THEN
-	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "created_at cannot be in the future";
+	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "created_at cannot be in the future.";
  END IF;
 END */;;
 DELIMITER ;
@@ -181,7 +181,7 @@ DELIMITER ;;
 /*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `gitinsightsdb`.`issue_BEFORE_UPDATE` BEFORE UPDATE ON `issue` FOR EACH ROW
 BEGIN
  IF (NEW.created_at > CURRENT_TIMESTAMP()) THEN
-	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "created_at cannot be in the future";
+	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "created_at cannot be in the future.";
  END IF;
 END */;;
 DELIMITER ;
@@ -228,7 +228,7 @@ DELIMITER ;;
 /*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `gitinsightsdb`.`language_repo_BEFORE_INSERT` BEFORE INSERT ON `language_repo` FOR EACH ROW
 BEGIN
 IF (NEW.lines_of_code <= 0) THEN
- SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'lines_of_code must be positive';
+ SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'lines_of_code must be positive.';
 END IF;
 END */;;
 DELIMITER ;
@@ -248,7 +248,7 @@ DELIMITER ;;
 /*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `gitinsightsdb`.`language_repo_BEFORE_UPDATE` BEFORE UPDATE ON `language_repo` FOR EACH ROW
 BEGIN
 IF (NEW.lines_of_code <= 0) THEN
- SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'lines_of_code must be positive';
+ SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'lines_of_code must be positive.';
 END IF;
 END */;;
 DELIMITER ;
@@ -311,7 +311,7 @@ DELIMITER ;;
 /*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `gitinsightsdb`.`organization_BEFORE_INSERT` BEFORE INSERT ON `organization` FOR EACH ROW
 BEGIN
  IF (NEW.created_at > CURRENT_TIMESTAMP()) THEN
-	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "created_at cannot be in the future";
+	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "created_at cannot be in the future.";
  END IF;
 END */;;
 DELIMITER ;
@@ -331,7 +331,7 @@ DELIMITER ;;
 /*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `gitinsightsdb`.`organization_BEFORE_UPDATE` BEFORE UPDATE ON `organization` FOR EACH ROW
 BEGIN
  IF (NEW.created_at > CURRENT_TIMESTAMP()) THEN
-	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "created_at cannot be in the future";
+	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "created_at cannot be in the future.";
  END IF;
 END */;;
 DELIMITER ;
@@ -442,7 +442,7 @@ IF (NEW.forks < 0) THEN
 	SET NEW.forks = 0;
 END IF;
  IF (NEW.created_at > CURRENT_TIMESTAMP()) THEN
-	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "created_at cannot be in the future";
+	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "created_at cannot be in the future.";
  END IF;
 END */;;
 DELIMITER ;
@@ -462,13 +462,13 @@ DELIMITER ;;
 /*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `gitinsightsdb`.`repo_BEFORE_UPDATE` BEFORE UPDATE ON `repo` FOR EACH ROW
 BEGIN
 IF (NEW.stars < 0) THEN
-	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "stars cannot be set to lower than zero";
+	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "stars cannot be set to lower than zero.";
 END IF;
 IF (NEW.forks < 0) THEN
-	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "forks cannot be set to lower than zero";
+	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "forks cannot be set to lower than zero.";
 END IF;
  IF (NEW.created_at > CURRENT_TIMESTAMP()) THEN
-	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "created_at cannot be in the future";
+	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "created_at cannot be in the future.";
  END IF;
 END */;;
 DELIMITER ;
@@ -516,7 +516,7 @@ DELIMITER ;;
 /*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `gitinsightsdb`.`team_BEFORE_INSERT` BEFORE INSERT ON `team` FOR EACH ROW
 BEGIN
  IF (NEW.created_at > CURRENT_TIMESTAMP()) THEN
-	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "created_at cannot be in the future";
+	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "created_at cannot be in the future.";
  END IF;
 END */;;
 DELIMITER ;
@@ -536,7 +536,7 @@ DELIMITER ;;
 /*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `gitinsightsdb`.`team_BEFORE_UPDATE` BEFORE UPDATE ON `team` FOR EACH ROW
 BEGIN
  IF (NEW.created_at > CURRENT_TIMESTAMP()) THEN
-	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "created_at cannot be in the future";
+	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "created_at cannot be in the future.";
  END IF;
 END */;;
 DELIMITER ;
@@ -587,10 +587,10 @@ DELIMITER ;;
 /*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `gitinsightsdb`.`user_BEFORE_INSERT` BEFORE INSERT ON `user` FOR EACH ROW
 BEGIN
  IF (NEW.date_of_birth > CURDATE()) THEN
-	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "date_of_birth must be earlier than today";
+	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "date_of_birth must be earlier than today.";
  END IF;
  IF (NEW.created_at > CURRENT_TIMESTAMP()) THEN
-	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "created_at cannot be in the future";
+	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "created_at cannot be in the future.";
  END IF;
 END */;;
 DELIMITER ;
@@ -610,10 +610,10 @@ DELIMITER ;;
 /*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `gitinsightsdb`.`user_BEFORE_UPDATE` BEFORE UPDATE ON `user` FOR EACH ROW
 BEGIN
  IF (NEW.date_of_birth > CURDATE()) THEN
-	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "date_of_birth must be lower than today";
+	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "date_of_birth must be lower than today.";
  END IF;
  IF (NEW.created_at > CURRENT_TIMESTAMP()) THEN
-	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "created_at cannot be in the future";
+	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "created_at cannot be in the future.";
  END IF;
 END */;;
 DELIMITER ;
