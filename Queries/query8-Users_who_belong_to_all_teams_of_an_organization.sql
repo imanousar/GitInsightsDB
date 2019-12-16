@@ -1,4 +1,4 @@
-# Users who belong to all teams of an organization. Apply for Facebook.
+# Users who belong to all teams of an organization - Apply for Facebook.
 
 # Table A
 create table a as select

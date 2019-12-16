@@ -1,4 +1,4 @@
-# Lines of code of a user in a specific language. Apply for batman and Python.
+# Lines of code of a user in a specific language - Apply for batman and Python.
 
 Select sum(lines_of_code) as 'total lines of batman in Python'
 From user

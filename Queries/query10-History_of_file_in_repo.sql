@@ -1,4 +1,4 @@
-# Commit history of file "d3d10sdklayers.dll" at "Test" repo owned by user "konsletr"
+# Commit history of a file at a repo of a specific user - Apply for file "d3d10sdklayers.dll" at "Test" repo owned by user "konsletr"
 
 SELECT commit_file.hash, commit_file.filename, commit_file.action, commit.created_at as timestamp 
 FROM 

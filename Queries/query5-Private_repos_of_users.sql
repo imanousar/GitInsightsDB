@@ -1,4 +1,4 @@
-# Private repos of specific users. Apply for batman and superman 
+# Private repos of specific users - Apply for batman and superman 
 
 Select count(repo.id) as 'private_repos_of_batman_&_superman'
 

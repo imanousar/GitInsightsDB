@@ -1,4 +1,4 @@
-# Users under a specific age -Use the age 23.
+# Users under a specific age - Use the age 23.
 
 select count(*) as user_aged_less_than_23
 
