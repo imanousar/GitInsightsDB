@@ -29,7 +29,7 @@ a:focus {
   width: 100%;
 }
 
-.tm-blue-bg {
+.tm-black-bg {
   background-color: #000a0f;
   color: white;
 }
@@ -37,7 +37,7 @@ a:focus {
 .tm-orange-text {
   color: #f05033;
 }
-.tm-blue-bg a {
+.tm-black-bg a {
   color: white;
 }
 
@@ -47,8 +47,8 @@ a:focus {
 }
 
 .tm-logo-div {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .tm-main-nav {
@@ -224,8 +224,9 @@ textarea:-ms-input-placeholder {
   }
 
   .tm-left-column {
-    position: fixed;
-    height: 100%;
+    float: left;
+    height: 120%;
+    line-height: 40%;
   }
 
   .container {
@@ -236,7 +237,8 @@ textarea:-ms-input-placeholder {
   }
 
   .tm-right-column {
-    float: right;
+    margin-left: 30%;
+    position: relative;
     width: 70%;
   }
 
