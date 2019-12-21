@@ -580,9 +580,14 @@ dl.row > dd + dt {
 .carousel-inner > .carousel-item > a > img,
 .carousel-inner > .carousel-item > img,
 .img-fluid {
-  max-width: 100%;
+  max-width: auto;
   height: auto;
+  
 }
+
+.img-welcome_boot {
+  width: 1000px;
+  }
 .img-thumbnail {
   padding: 0.25rem;
   background-color: #fff;
