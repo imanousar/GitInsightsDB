@@ -29,15 +29,15 @@ a:focus {
   width: 100%;
 }
 
-.tm-black-bg {
+.tm-blue-bg {
   background-color: #000a0f;
   color: white;
 }
 
-.tm-orange-text {
+.tm-blue-text {
   color: #f05033;
 }
-.tm-black-bg a {
+.tm-blue-bg a {
   color: white;
 }
 
@@ -47,8 +47,8 @@ a:focus {
 }
 
 .tm-logo-div {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .tm-main-nav {
@@ -64,8 +64,7 @@ a:focus {
   margin-bottom: 60px;
 }
 .tm-welcome-title {
-  font-size: 4rem;
-  font-weight: 700;
+  font-size: 2.4rem;
 }
 .tm-section-title {
   font-size: 2.2rem;
@@ -121,12 +120,6 @@ p {
   margin-right: -5px;
 }
 
-.tm-img-logo_welcome {
-  display: block;
-
-  max-width: 100%;
-  max-height: 100%;
-}
 .tm-img-container {
   float: left;
 }
@@ -224,9 +217,8 @@ textarea:-ms-input-placeholder {
   }
 
   .tm-left-column {
-    float: left;
-    height: 120%;
-    line-height: 40%;
+    position: fixed;
+    height: 100%;
   }
 
   .container {
@@ -237,8 +229,7 @@ textarea:-ms-input-placeholder {
   }
 
   .tm-right-column {
-    margin-left: 30%;
-    position: relative;
+    float: right;
     width: 70%;
   }
 
@@ -368,6 +359,7 @@ textarea:-ms-input-placeholder {
   .tm-site-name {
     font-size: 2.4rem;
     margin-top: 10px;
+    color: white;
   }
 }
 
