@@ -938,7 +938,7 @@ legend {
   fill: #ccc;
 }
 
-.s007 form .inner-form .basic-search .input-field .result-count {
+.s007 form .inner-form .basic-search .input-field .button-next-to-input {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: start;
@@ -955,7 +955,7 @@ legend {
   font-size: 14px;
 }
 
-.s007 form .inner-form .basic-search .input-field .result-count span {
+.s007 form .inner-form .basic-search .input-field .button-next-to-input span {
   color: #cf150e;
   padding-right: 5px;
 }
