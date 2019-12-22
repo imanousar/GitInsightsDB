@@ -4,11 +4,12 @@
 #
 #--------------------------------------------
 
-# DROP USERS IF THEY EXIST ALREADY
-DROP USER 'admin'@'localhost';
-DROP USER 'reader'@'localhost';
-DROP USER 'reader'@'%';
-DROP USER 'writer'@'localhost';
+# DROP USERS IF THEY EXIST ALREADY 
+# DROP USER 'admin'@'localhost';
+# DROP USER 'reader'@'localhost';
+# DROP USER 'reader'@'%';
+# DROP USER 'writer'@'localhost';
+# DROP USER 'powerUser'@'localhost';
 
 #--------------------------------------------
 # Admin USER 
@@ -35,4 +36,11 @@ GRANT SELECT, SHOW VIEW ON gitinsightdb.* TO 'reader'@'%';
 #--------------------------------------------
 CREATE USER 'writer'@'localhost' IDENTIFIED BY 'writer';
 GRANT INSERT, UPDATE ON gitinsightdb.* TO 'writer'@'localhost';
+#--------------------------------------------
+
+#--------------------------------------------
+# PowerUser USER 
+#--------------------------------------------
+CREATE USER 'powerUser'@'localhost' IDENTIFIED BY 'powerUser';
+GRANT INSERT, SELECT, DELETE, SHOW VIEW, UPDATE ON gitinsightdb.* TO 'powerUser'@'localhost';
 #--------------------------------------------
