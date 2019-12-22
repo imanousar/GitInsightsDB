@@ -955,7 +955,13 @@ legend {
   font-size: 14px;
 }
 
-.s007 form .inner-form .basic-search .input-field .button-next-to-input span {
+.s007
+  form
+  .inner-form
+  .basic-search
+  .input-field
+  .button-next-to-inputrow-space
+  span {
   color: #cf150e;
   padding-right: 5px;
 }
