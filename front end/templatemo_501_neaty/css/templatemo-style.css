@@ -69,6 +69,7 @@ a:focus {
 }
 .tm-section-title {
   font-size: 2.2rem;
+  font-weight: bold;
 }
 .tm-content-div {
   padding: 40px;
@@ -236,16 +237,23 @@ textarea:-ms-input-placeholder {
     width: 30%;
   }
 
+  /* Pages: query */
   .tm-right-column {
+    float: right;
+    margin-top: 5%;
+    width: 75%;
+  }
+
+  /* Pages: Welcome */
+  .tm-right-column-welcome {
     float: right;
     width: 85%;
   }
-
   .img-welcome_boot {
     display: block;
     align-self: center;
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 20%;
+    margin-right: 20%;
     width: 80%;
   }
   .tm-nav-item {
