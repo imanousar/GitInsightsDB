@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="author" content="colorlib.com" />
 
-    <title>Neaty HTML Web Template</title>
+    <title>Repo Search</title>
     <!--
 Neaty HTML Template
 http://www.templatemo.com/tm-501-neaty
@@ -67,11 +67,9 @@ http://www.templatemo.com/tm-501-neaty
   </head>
   <body>
     <div class="container">
-      
-      <div class="tm-right-column">
       <div class="row">
         <!-- Left column: logo and menu -->
-                                       
+                                        
          <!-- Side navigation -->
          <div class="sidenav">
           <div class="tm-logo-div text-xs-center">
@@ -130,90 +128,66 @@ http://www.templatemo.com/tm-501-neaty
              </div>
                
                          <!-- Page content -->
-                         <div class="main">
-                            <!-- Left column: logo and menu -->
-                          </div>
-                        </div>
+             <div class="main">
+             <!-- Left column: logo and menu -->
+
           <!-- Right column: content -->
           <div class="tm-right-column">
-		  
-		   <!-- Contact Us section -->
-              <section id="contact" class="tm-section">
-                <header>
-                  <h2 class="tm-orange-text tm-section-title tm-margin-b-30">
-                    Contact Us
-                  </h2>
-                </header>
 
-                <div class="row">
-                  <div class="col-lg-6">
-                    <form action="#contact" method="post" class="contact-form">
-                      <div class="form-group">
-                        <input
-                          type="text"
-                          id="contact_name"
-                          name="contact_name"
-                          class="form-control"
-                          placeholder="Name"
-                          required
-                        />
-                      </div>
-                      <div class="form-group">
-                        <input
-                          type="email"
-                          id="contact_email"
-                          name="contact_email"
-                          class="form-control"
-                          placeholder="Email"
-                          required
-                        />
-                      </div>
-                      <div class="form-group">
-                        <textarea
-                          id="contact_message"
-                          name="contact_message"
-                          class="form-control"
-                          rows="9"
-                          placeholder="Message"
-                          required
-                        ></textarea>
-                      </div>
-                      <button type="submit" class="float-right btn btn--radius-2 btn--blue">
-                        Send
-                      </button>
-                    </form>
-                  </div>
 
-        
-                </div>
-              </section>
-              <footer>
-                <p class="tm-copyright-p">
-                  Copyright &copy;
-                  <span class="tm-current-year">2017</span> Your Company |
-                  Designed by
-                  <a href="http://www.templatemo.com" target="_parent"
-                    >templatemo</a
-                  >
-                </p>
-              </footer>
-            </div>
-            <script>
-              /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
-              var dropdown = document.getElementsByClassName("dropdown-btn");
-              var i;
-              
-              for (i = 0; i < dropdown.length; i++) {
-                dropdown[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var dropdownContent = this.nextElementSibling;
-                if (dropdownContent.style.display === "block") {
-                dropdownContent.style.display = "none";
-                } else {
-                dropdownContent.style.display = "block";
-                }
-                });
-              }
-              </script>
-</body>
+             <h2 class="tm-orange-text tm-section-title tm-margin-b-45">
+                  Repo Search
+             </h2>
+                <div class="s007">
+                  <div class="card card-4" style="width: 60rem;">
+                    <div class="card-body">
+                  <form>
+                    <div class="inner-form">
+                      <div class="basic-search">
+                        <div class="input-field">
+                          <div class="icon-wrap">
+                            <svg
+                              version="1.1"
+                              xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 20 20"
+                            >
+                              <path
+                                d="M18.869 19.162l-5.943-6.484c1.339-1.401 2.075-3.233 2.075-5.178 0-2.003-0.78-3.887-2.197-5.303s-3.3-2.197-5.303-2.197-3.887 0.78-5.303 2.197-2.197 3.3-2.197 5.303 0.78 3.887 2.197 5.303 3.3 2.197 5.303 2.197c1.726 0 3.362-0.579 4.688-1.645l5.943 6.483c0.099 0.108 0.233 0.162 0.369 0.162 0.121 0 0.242-0.043 0.338-0.131 0.204-0.187 0.217-0.503 0.031-0.706zM1 7.5c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5-2.916 6.5-6.5 6.5-6.5-2.916-6.5-6.5z"
+                              ></path>
+                            </svg>
+                          </div>
+                          <input
+                            id="search"
+                            type="text"
+                            placeholder="Search for Repos..."
+                          />
+                          <div class="button-next-to-input">
+                            <span> <button class="btn-search">Search</button> </span>
+                        </div>
+                      </div>
+                      
+                    </div>
+                </div>    
+    </div>
+    <script>
+      /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+      var dropdown = document.getElementsByClassName("dropdown-btn");
+      var i;
+      
+      for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var dropdownContent = this.nextElementSibling;
+        if (dropdownContent.style.display === "block") {
+        dropdownContent.style.display = "none";
+        } else {
+        dropdownContent.style.display = "block";
+        }
+        });
+      }
+      </script>
+  </body>
 </html>	
