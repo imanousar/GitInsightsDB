@@ -1,0 +1,35 @@
+repo,title,description,state,created_at,label,user
+1,missing installation instructions,Percipio affectus sequatur iii habentur impressa meo.,open,2018-04-07 03:57:00,documentation,7
+1,users authentication,Et lectores earundem aliasque de immobile putandum me.,open,2018-03-16 21:07:00,bug,1
+1,users privileges,Ex in si volent negare possum.,open,2017-03-19 01:04:00,bug,2
+2,how can I use the code?,Et lectores earundem aliasque de immobile putandum me.,closed,2018-03-13 01:22:00,help,2
+2,wrong use of DFT,Novi vel has fal sine dat etsi. ,open,2017-06-10 03:55:00,help,5
+2,wrong use of SFT,Factae imo partem absque seriem meo dictis. Sequentium rem cogitantur deo existentia theologiae. ,open,2018-08-02 01:43:00,help,3
+3,IEEE format missing,Ex in si volent negare possum.,closed,2019-11-16 17:42:00,documentation,3
+6,add capacitor,Factae imo partem absque seriem meo dictis. Sequentium rem cogitantur deo existentia theologiae. ,closed,2019-02-08 08:34:00,feature,3
+6,add MOSFET for protection,Novi vel has fal sine dat etsi. ,closed,2019-05-06 19:17:00,feature,4
+12,Jokers conidition,Ab ad noctu ac ut veras terra ausit nudam.,open,2017-11-12 11:31:00,other,10
+17,tsitsipas live statistics,Ratione probant sciatur id ex docetur replere is.,closed,2017-05-10 12:39:00,feature,4
+17,tsitsipas live statistics vs Federer,Ab ad noctu ac ut veras terra ausit nudam.,closed,2017-12-13 16:31:00,feature,2
+17,tsitsipas live statistics vs Jokovic,Et lectores earundem aliasque de immobile putandum me.,closed,2019-08-02 09:53:00,feature,2
+17,tsitsipas live statistics vs Nadal,Percipio affectus sequatur iii habentur impressa meo.,closed,2018-09-26 18:08:00,feature,1
+22,SVD algorithm error,Et lectores earundem aliasque de immobile putandum me.,open,2019-06-03 18:16:00,bug,5
+22,SVM algorithm error,Factae imo partem absque seriem meo dictis. Sequentium rem cogitantur deo existentia theologiae. ,open,2018-02-18 06:21:00,bug,7
+24,Add component,Ab ad noctu ac ut veras terra ausit nudam.,open,2017-01-20 20:44:00,other,8
+24,add new libraries,Percipio affectus sequatur iii habentur impressa meo.,closed,2018-01-17 11:21:00,feature,5
+24,add new library,Ex in si volent negare possum.,open,2018-11-05 01:30:00,feature,7
+25,Add component,Novi vel has fal sine dat etsi. ,open,2019-02-17 03:01:00,other,9
+25,missing countries,Et lectores earundem aliasque de immobile putandum me.,open,2018-08-08 22:17:00,feature,8
+26,Add component,Factae imo partem absque seriem meo dictis. Sequentium rem cogitantur deo existentia theologiae. ,open,2019-07-24 01:37:00,other,7
+26,add instructions ,Ratione probant sciatur id ex docetur replere is.,open,2017-08-24 15:15:00,documentation,5
+26,barcelona wrong statistics,Factae imo partem absque seriem meo dictis. Sequentium rem cogitantur deo existentia theologiae. ,open,2019-03-23 21:16:00,bug,3
+26,real wrong statistics,Ab ad noctu ac ut veras terra ausit nudam.,open,2018-05-14 19:57:00,bug,3
+26,unit_tests,Ex in si volent negare possum.,closed,2017-03-06 07:35:00,other,4
+26,unit_tests_2,Ratione probant sciatur id ex docetur replere is.,open,2018-10-03 14:38:00,other,8
+30,missing albanian words,Et lectores earundem aliasque de immobile putandum me.,open,2017-09-05 11:36:00,bug,10
+30,missing greek words,Percipio affectus sequatur iii habentur impressa meo.,open,2017-06-01 07:33:00,bug,10
+30,missing polish words,Ex in si volent negare possum.,open,2017-11-11 07:19:00,bug,9
+30,missing turkish words,Ratione probant sciatur id ex docetur replere is.,open,2017-12-16 06:42:00,bug,5
+31,MDE ,Novi vel has fal sine dat etsi. ,open,2018-09-17 15:35:00,bug,2
+39,live images 1,Ratione probant sciatur id ex docetur replere is.,open,2017-03-07 02:14:00,documentation,4
+39,live images 2,Novi vel has fal sine dat etsi. ,open,2019-05-09 06:18:00,bug,6
