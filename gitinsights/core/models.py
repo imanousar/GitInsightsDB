@@ -29,8 +29,8 @@ class Org(models.Model):
     owners = models.ManyToManyField(User)
     description = models.TextField(blank=True, null=True)
     name = models.CharField(unique=True, max_length=45)
-    created_at = models.DateTimeField() 
-    
+    created_at = models.DateTimeField()
+
     def __str__(self):
         return f"{self.name}"
 
@@ -44,7 +44,7 @@ class Team(models.Model):
 
     class Meta:
         unique_together = (('org', 'name'))
-    
+
     def __str__(self):
         return f"{self.org}/{self.name}"
 
@@ -60,7 +60,7 @@ class Repo(models.Model):
 
     class Meta:
         unique_together = (('name', 'owner'))
-    
+
     def __str__(self):
         return f"{self.name}"
 
@@ -72,7 +72,7 @@ class LanguageRepo(models.Model):
 
     class Meta:
         unique_together = (('language', 'repo'))
-    
+
     def __str__(self):
         return f"{self.language}: {self.lines_of_code} loc"
 
@@ -86,7 +86,7 @@ class Commit(models.Model):
 
     class Meta:
         unique_together = (('hash', 'repo'),)
-    
+
     def __str__(self):
         return f"{self.hash} - {self.created_at}"
 
@@ -106,7 +106,7 @@ class CommitFile(models.Model):
 
     class Meta:
         unique_together = (('commit', 'filename'))
-    
+
     def __str__(self):
         return f"{self.filename}: {self.action}"
 
@@ -133,6 +133,6 @@ class Issue(models.Model):
 
     class Meta:
         unique_together = (('repo', 'title'))
-    
+
     def __str__(self):
         return f"{self.title}"

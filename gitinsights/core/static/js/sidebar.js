@@ -2,14 +2,14 @@ document.write(`
 <div class="container">
 <div class="row">
   <!-- Left column: logo and menu -->
-                                  
+
    <!-- Side navigation -->
    <div class="sidenav">
-    <div class="tm-logo-div text-xs-center"> 
+    <div class="tm-logo-div text-xs-center">
 	  <img src="https://i.ibb.co/3C5Wg1h/tm-neaty-logo.png" alt="Logo">
-      <a href="index"><h1 class="tm-site-name">Git Insights DB</h1></a>   
+      <a href="/api"><h1 class="tm-site-name">Git Insights DB</h1></a>   
  </div>
-    <button class="dropdown-btn">Commit 
+    <button class="dropdown-btn">Commit
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-container">
@@ -17,7 +17,7 @@ document.write(`
       <a href="searchCommit">Search Commit</a>
     </div>
 
-<button class="dropdown-btn">Issue 
+<button class="dropdown-btn">Issue
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-container">
@@ -25,13 +25,13 @@ document.write(`
       <a href="searchIssue">Search Issue</a>
     </div>
 
-<button class="dropdown-btn">Organization 
+<button class="dropdown-btn">Organization
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-container">
       <a href="addOrganization">Add Organization</a>
       <a href="searchOrganization">Search Organization</a>
-      <button class="dropdown-btn">Repo 
+      <button class="dropdown-btn">Repo
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-container">
@@ -40,7 +40,7 @@ document.write(`
     </div>
     </div>
 
-<button class="dropdown-btn">Team 
+<button class="dropdown-btn">Team
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-container">
@@ -48,13 +48,13 @@ document.write(`
       <a href="searchTeam">Search Team</a>
     </div>
 
-<button class="dropdown-btn">User 
+<button class="dropdown-btn">User
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-container">
       <a href="addUser">Add User</a>
       <a href="searchUser">Search User</a>
-      <button class="dropdown-btn">Repo 
+      <button class="dropdown-btn">Repo
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-container">
