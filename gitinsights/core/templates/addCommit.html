@@ -1,15 +1,17 @@
 {% extends "baseAdd.html" %}
 {% block title %} Add a New Commit {% endblock %}
 {% block h2 %} Add a New Commit {% endblock %}
-{% block form %}                
+{% block form %}
                       <div class="card card-4" style="width: 80rem;">
                         <div class="card-body">
                           <h2 class="title">Complete the form and then submit.</h2>
-                          <form method="POST">
+                          <form action="/api/" method="POST">
                             <div class="row row-space">
                               <div class="col-2">
                                 <div class="input-group">
                                   <label class="label">hash</label>
+                                  {% csrf_token %}
+                                  {{ form }}
                                   <input
                                     class="input--style-4"
                                     type="text"
@@ -29,7 +31,7 @@
                                 </div>
                               </div>
                             </div>
-                            
+
 
                             <!-- Second Row -->
                             <div class="row row-space">
@@ -56,7 +58,7 @@
                                 </div>
                               </div>
                             </div>
-                            
+
                             <!-- Third Row -->
                             <div class="row row-space">
                               <div class="col-2">
@@ -71,10 +73,10 @@
                                   />
                                 </div>
                               </div>
-                              
-                           
+
+
                               </div>
-                            
+
 
                             <!-- NEED TO CHANGE THE NAMES HERE -->
                             <!-- NEED TO CHANGE THE NAMES HERE -->
@@ -91,7 +93,7 @@
                               >
                                 Submit
                               </button>
-                              
+
                             </div>
                           </form>
                         </div>
@@ -100,11 +102,11 @@
                   </div>
 
                 </div>
-              
+
             </div>
           </div>
 		</div>
   </div>
 {% endblock %}
 </body>
-</html>	
+</html>
