@@ -20,47 +20,66 @@ def get_username(request):
     else:
         form = index()
 
-    return render(request, 'name.html', {'form': form})
+    return render(request, 'index.html', {'form': form})
 
 
-def index(request):
-     return TemplateResponse(request, 'index.html')
+class indexView():
 
-def addCommit(request):
-     return TemplateResponse(request, 'addCommit.html')
+    def index(request):
+        return TemplateResponse(request, 'index.html')
 
-def addIssue(request):
-     return TemplateResponse(request, 'addIssue.html')
 
-def addOrganization(request):
-     return TemplateResponse(request, 'addOrganization.html')
+class commitView():
 
-def addRepo(request):
-     return TemplateResponse(request, 'addRepo.html')
+    def addCommit(request):
+        return TemplateResponse(request, 'addCommit.html')
 
-def addTeam(request):
-     return TemplateResponse(request, 'addTeam.html')
+    def searchCommit(request):
+        return TemplateResponse(request, 'searchCommit.html')
 
-def addUser(request):
-     return TemplateResponse(request, 'addUser.html')
 
-def searchCommit(request):
-     return TemplateResponse(request, 'searchCommit.html')
+class issueView():
+    def addIssue(request):
+        return TemplateResponse(request, 'addIssue.html')
 
-def searchIssue(request):
-     return TemplateResponse(request, 'searchIssue.html')
+    def searchIssue(request):
+         return TemplateResponse(request, 'searchIssue.html')
 
-def searchOrganization(request):
-     return TemplateResponse(request, 'searchOrganization.html')
 
-def searchRepo(request):
-     return TemplateResponse(request, 'searchRepo.html')
+class organizationView():
 
-def searchTeam(request):
-     return TemplateResponse(request, 'searchTeam.html')
+    def addOrganization(request):
+        return TemplateResponse(request, 'addOrganization.html')
 
-def searchUser(request):
-     return TemplateResponse(request, 'searchUser.html')
+    def searchOrganization(request):
+        return TemplateResponse(request, 'searchOrganization.html')
 
-def contact(request):
-     return TemplateResponse(request, 'contact.html')
+
+class repoView():
+    def addRepo(request):
+        return TemplateResponse(request, 'addRepo.html')
+
+    def searchRepo(request):
+        return TemplateResponse(request, 'searchRepo.html')
+
+
+class teamView():
+    def addTeam(request):
+        return TemplateResponse(request, 'addTeam.html')
+
+    def searchTeam(request):
+        return TemplateResponse(request, 'searchTeam.html')
+
+
+class userView():
+    def addUser(request):
+        return TemplateResponse(request, 'addUser.html')
+
+    def searchUser(request):
+         return TemplateResponse(request, 'searchUser.html')
+
+
+class contactView():
+
+    def contact(request):
+        return TemplateResponse(request, 'contact.html')
