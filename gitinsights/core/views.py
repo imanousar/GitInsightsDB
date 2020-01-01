@@ -4,6 +4,7 @@ from .forms import *
 from .models import User
 from django.http import HttpResponseRedirect, HttpResponse
 
+
 class usersView():
 
     def get(request):
