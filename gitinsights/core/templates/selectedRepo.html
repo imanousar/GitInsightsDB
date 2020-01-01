@@ -1,0 +1,15 @@
+{% extends "baseAdd.html" %}
+{% block title %} Repo {% endblock %}
+{% block h2 %} Repo Selected {% endblock %}
+{% block form %}
+
+<div class="container">
+
+    {{repo.name}} <br>
+    {{repo.stars}} <br>
+    {{repo.forks}} <br>
+    {{repo.is_public}} <br>
+    {{repo.created_at }} <br>
+
+</div>
+{% endblock %}

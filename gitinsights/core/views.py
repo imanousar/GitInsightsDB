@@ -1,7 +1,7 @@
 from django.template.response import TemplateResponse
 from django.shortcuts import render
 from .forms import *
-from .models import User
+from .models import *
 from django.http import HttpResponseRedirect, HttpResponse
 
 
@@ -15,7 +15,20 @@ class usersView():
 
     def selected(request, username):
         user = User.objects.get(username=username)
-        return render(request, 'selectedUser.html', {"user": user})
+        repos = Repo.objects.filter(owner=user.id)
+        return render(request, 'selectedUser.html', {"user": user, "repos": repos})
+
+
+class reposView():
+
+    def get(request):
+        repos = Repo.objects.all()
+        context = {"repos": repos}
+        return render(request, 'repos.html', context)
+
+    def selected(request, id):
+        repo = Repo.objects.get(id=id)
+        return render(request, 'selectedRepo.html', {"repo": repo})
 
 
 class indexView():
@@ -38,7 +51,7 @@ class issueView():
         return TemplateResponse(request, 'addIssue.html')
 
     def searchIssue(request):
-         return TemplateResponse(request, 'searchIssue.html')
+        return TemplateResponse(request, 'searchIssue.html')
 
 
 class organizationView():
@@ -48,14 +61,6 @@ class organizationView():
 
     def searchOrganization(request):
         return TemplateResponse(request, 'searchOrganization.html')
-
-
-class repoView():
-    def addRepo(request):
-        return TemplateResponse(request, 'addRepo.html')
-
-    def searchRepo(request):
-        return TemplateResponse(request, 'searchRepo.html')
 
 
 class teamView():

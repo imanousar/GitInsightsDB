@@ -14,9 +14,9 @@
 <br><br>
 <h1> Repos </h1>
 <ul>
-  {% for repo in user.user %}
+  {% for repo in repos %}
 
-  <li><a href="/api/User/{{ repo.name }}"> {{repo.name}} </a> </li>
+  <li><a href="/api/repos/{{ repo.id }}"> {{repo.name}} </a> </li>
   {% endfor %}
 </ul>
 
