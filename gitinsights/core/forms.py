@@ -11,6 +11,6 @@ class UserForm(forms.Form):
 
 
 class ContactForm(forms.Form):
-    name = forms.CharField(max_length=100)
-    sender = forms.EmailField(required=False,label='Your e-mail address')
+    name = forms.CharField(label="Your name", max_length=100)
+    sender = forms.EmailField(label='Your e-mail address')
     message = forms.CharField(widget=forms.Textarea)

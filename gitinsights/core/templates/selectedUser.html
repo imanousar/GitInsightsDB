@@ -1,0 +1,18 @@
+
+<h1> User Selected </h1>
+
+
+{{ user.username }} <br>
+{{ user.fullname }} <br>
+{{ user.date_of_birth }} <br>
+{{ user.email }} <br>
+{{ user.created_at }} <br>
+
+
+<h1> Repos </h1>
+<ul>
+  {% for repo in user.user %}
+
+  <li><a href="/api/User/{{ repo.name }}"> {{repo.name}} </a> </li>
+  {% endfor %}
+</ul>

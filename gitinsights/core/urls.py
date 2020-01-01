@@ -2,6 +2,10 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
+
+    path('User', views.usersView.get, name='users'),
+    path('User/<str:username>/', views.usersView.selected, name="selectedUser"),
+
     path('', views.indexView.index, name='index'),
     path('addCommit', views.commitView.addCommit, name='addCommit'),
     path('addIssue', views.issueView.addIssue, name='addIssue'),
