@@ -16,6 +16,7 @@ class usersView():
     def selected(request, username):
         user = User.objects.get(username=username)
         repos = Repo.objects.filter(owner=user.id)
+        #orgs = Org.objects.filter(owners=user.id)
         return render(request, 'selectedUser.html', {"user": user, "repos": repos})
 
 
@@ -28,7 +29,22 @@ class reposView():
 
     def selected(request, id):
         repo = Repo.objects.get(id=id)
-        return render(request, 'selectedRepo.html', {"repo": repo})
+        user = User.objects.get(id=repo.owner)
+        return render(request, 'selectedRepo.html', {"repo": repo, "user":user})
+
+
+class orgsView():
+
+    def get(request):
+        orgs = Org.objects.all()
+        context = {"orgs": orgs}
+        return render(request, 'org.html', context)
+
+    def selected(request, org_name):
+        org = Org.objects.get(name=org_name)
+
+#        teams = Team.objects.filter(org = org.name)
+        return render(request, 'selectedOrg.html', {"org": org})#, "teams": teams})
 
 
 class indexView():
@@ -54,13 +70,6 @@ class issueView():
         return TemplateResponse(request, 'searchIssue.html')
 
 
-class organizationView():
-
-    def addOrganization(request):
-        return TemplateResponse(request, 'addOrganization.html')
-
-    def searchOrganization(request):
-        return TemplateResponse(request, 'searchOrganization.html')
 
 
 class teamView():

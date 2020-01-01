@@ -13,12 +13,23 @@
 
 <br><br>
 <h1> Repos </h1>
-<ul>
-  {% for repo in repos %}
-
-  <li><a href="/api/repos/{{ repo.id }}"> {{repo.name}} </a> </li>
-  {% endfor %}
-</ul>
+<br>
+  {% if repos %}
+<div class="list-group">
+<ol>
+    {% for repo in repos %}
+	<li><button
+	type="button"
+	class="list-group-item list-group-item-action"
+	onclick="window.location.href = '/api/repos/{{ repo.id }}';">
+	{{repo.name}}
+	</button></li>
+    {% endfor %}
+</ol>
+</div>
+  {% else %}
+    <h3> No repos where found </h3>
+  {% endif %}
 
 </div>
 {% endblock %}

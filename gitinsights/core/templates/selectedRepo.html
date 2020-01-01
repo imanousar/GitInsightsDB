@@ -4,12 +4,35 @@
 {% block form %}
 
 <div class="container">
-
-    {{repo.name}} <br>
-    {{repo.stars}} <br>
-    {{repo.forks}} <br>
-    {{repo.is_public}} <br>
-    {{repo.created_at }} <br>
-
+<table class="table table-bordered table-hover">
+  <tr>
+    <th>Repo Name</th>
+    <td>{{ repo.name }}</td>
+  </tr>
+  <tr>
+    <th>Repo Owner</th>
+    <td>{{ user.username }}</td>
+  </tr>
+    <tr>
+    <th>Repo Stars</th>
+    <td>{{ repo.stars }}</td>
+  </tr>
+    <tr>
+    <th>Repo Forks</th>
+    <td>{{ repo.forks }}</td>
+  </tr>
+    <th>Repo Privacy</th>
+    <td>
+	{% if repo.is_public %}
+		Public
+	{% else %}
+		Private
+	{% endif %}
+	</td>
+  </tr>
+    <th>Repo Creation Date</th>
+    <td>{{ repo.created_at }}</td>
+  </tr>
+</table>
 </div>
 {% endblock %}

@@ -7,6 +7,8 @@ urlpatterns = [
     path('User/<str:username>/', views.usersView.selected, name="selectedUser"),
     path('repos/', views.reposView.get, name='repo'),
     path('repos/<int:id>/', views.reposView.selected, name="selectedRepo"),
+    path('orgs/', views.orgsView.get, name='orgs'),
+    path('orgs/<str:org_name>/', views.orgsView.selected, name="selectedOrg"),
 
 
 

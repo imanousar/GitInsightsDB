@@ -1,18 +1,18 @@
 {% extends "baseAdd.html" %}
 {% block title %} User {% endblock %}
-{% block h2 %} List of all Users {% endblock %}
+{% block h2 %} List of all Orgs {% endblock %}
 {% block form %}
 
 <div class="container">
-  {% if users %}
+  {% if orgs %}
 <div class="list-group">
 <ol>
-    {%   for user in users %}
+    {%   for org in orgs %}
 	<li><button
 	type="button"
 	class="list-group-item list-group-item-action"
-	onclick="window.location.href = '/api/User/{{ user.username }}';">
-	{{user.username}}
+	onclick="window.location.href = '/api/orgs/{{ org.name }}';">
+	{{org.name}}
 	</button></li>
     {% endfor %}
 </ol>
