@@ -11,7 +11,7 @@ class usersView():
         users = User.objects.all()
         context = {"users": users}
 
-        return render(request, 'user.html', context)
+        return render(request, 'users.html', context)
 
     def selected(request, username):
         user = User.objects.get(username=username)
@@ -39,8 +39,10 @@ class reposView():
         return render(request, 'selectedRepo.html', {"repo": repo, "owner_name":owner_name, "commits":commits})
 
     def commitSelected(request, id, hash):
-        repo = Repo.objects.get(id=id)
-        commit = Commit.objects.get(repo=id, hash=hash)
+        #if (Commit.objects.get(repo = Repo.objects.get(id=id)).hash == ' '+hash+' '):
+        commit = Commit.objects.get(hash=' '+hash+' ')
+        #else:
+        #  return HttpResponseRedirect(request, 'index.html')
         return render(request, 'selectedCommit.html', {"commit": commit})
 
 
@@ -50,7 +52,7 @@ class orgsView():
     def get(request):
         orgs = Org.objects.all()
         context = {"orgs": orgs}
-        return render(request, 'org.html', context)
+        return render(request, 'orgs.html', context)
 
     def selected(request, org_name):
         org = Org.objects.get(name=org_name)

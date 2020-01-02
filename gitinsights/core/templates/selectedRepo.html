@@ -43,7 +43,7 @@
 		<li><button
 		type="button"
 		class="list-group-item list-group-item-action"
-		onclick="window.location.href = '{% url 'reposUrl' %}{{ repo.id }}/{{ commit.hash }}';">
+		onclick="window.location.href = '{% url 'reposUrl' %}{{ repo.id }}/commits/{{ commit.hash|slice:"1:-1"  }}';">
 		{{commit.branch}} &nbsp; | &nbsp; {{commit.created_at }} | &nbsp; {{commit.hash }}</button></li>
 
     {% endfor %}

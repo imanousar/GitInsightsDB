@@ -4,14 +4,14 @@ from . import views
 
 urlpatterns = [
 
-    path('user/', views.usersView.get, name='usersUrl'),
-    path('user/<str:username>/', views.usersView.selected, name="selectedUserUrl"),
+    path('users/', views.usersView.get, name='usersUrl'),
+    path('users/<str:username>/', views.usersView.selected, name="selectedUserUrl"),
     path('repos/', views.reposView.get, name='reposUrl'),
     path('repos/<int:id>/', views.reposView.selected, name="selectedRepoUrl"),
     path('orgs/', views.orgsView.get, name='orgsUrl'),
     path('orgs/<str:org_name>/', views.orgsView.selected, name="selectedOrgUrl"),
-    path('orgs/<str:org_name>/<str:team_name>', views.orgsView.teamSelected, name="selectedOrgTeamUrl"),
-    path('repos/<int:id>/<str:hash>', views.reposView.commitSelected, name="selectedRepoCommitUrl"),
+    path('orgs/<str:org_name>/teams/<str:team_name>', views.orgsView.teamSelected, name="selectedOrgTeamUrl"),
+    path('repos/<int:id>/commits/<str:hash>', views.reposView.commitSelected, name="selectedRepoCommitUrl"),
 
 
 
