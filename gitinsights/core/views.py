@@ -46,10 +46,13 @@ class orgsView():
     def selected(request, org_name):
         org = Org.objects.get(name=org_name)
         repos = Repo.objects.filter(id=org.id.id)
+        teams = Team.objects.filter(org=org.id.id)
+        return render(request, 'selectedOrg.html', {"org": org, "repos": repos, "teams": teams})
 
-#        teams = Team.objects.filter(org = org.name)
-        return render(request, 'selectedOrg.html', {"org": org, "repos": repos})#, "teams": teams})
-
+    def teamSelected(request, org_name, team_name):
+        org = Org.objects.get(name=org_name)
+        team = Team.objects.get(org=org.id.id, name=team_name)
+        return render(request, 'selectedTeam.html', {"team": team, "org": org})
 
 class indexView():
 
@@ -96,7 +99,7 @@ class contactView():
 
     def contact(request):
         return TemplateResponse(request, 'contact.html')
-		
+
 class searchView():
 
     def get(request):

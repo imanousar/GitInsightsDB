@@ -31,8 +31,8 @@
 <div class="list-group">
 <ol>
     {% for repo in repos %}
-	<li><button 
-	type="button" 
+	<li><button
+	type="button"
 	class="list-group-item list-group-item-action"
 	onclick="window.location.href = '/api/repos/{{ repo.id }}';">
 	{{repo.name}}
@@ -45,4 +45,27 @@
   {% endif %}
 
 </div>
+
+<br><br>
+<h2> Teams </h2>
+<br>
+  {% if teams %}
+<div class="list-group">
+<ol>
+    {% for team in teams %}
+	<li><button
+	type="button"
+	class="list-group-item list-group-item-action"
+	onclick="window.location.href = '/api/orgs/{{org.name}}/{{ team.name }}';">
+	{{team.name}}
+	</button></li>
+    {% endfor %}
+</ol>
+</div>
+  {% else %}
+    <h3> No teams were found </h3>
+  {% endif %}
+
+</div>
+
 {% endblock %}
