@@ -39,7 +39,7 @@
 </ol>
 </div>
   {% else %}
-    <h3> No repos were found </h3>
+    <h3> No Repos were found </h3>
   {% endif %}
 
 <h2> Teams </h2>
@@ -51,14 +51,14 @@
 	<li><button
 	type="button"
 	class="list-group-item list-group-item-action"
-	onclick="window.location.href = '{% url 'orgsUrl' %}{{org.name}}/{{ team.name }}';">
+	onclick="window.location.href = '{% url 'orgsUrl' %}{{org.name}}/teams/{{ team.name }}';">
 	{{team.name}}
 	</button></li>
     {% endfor %}
 </ol>
 </div>
   {% else %}
-    <h3> No teams were found </h3>
+    <h3> No Teams were found </h3>
   {% endif %}
 
 </div>
