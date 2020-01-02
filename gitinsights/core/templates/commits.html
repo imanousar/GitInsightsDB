@@ -1,0 +1,28 @@
+{% extends "header.html" %}
+{% block title %} Commits {% endblock %}
+{% block h2 %} List of all Commits {% endblock %}
+{% block main %}
+
+  {% if commit %}
+  <ol>
+    
+	{%   for commit in commits %}
+	
+	<li><button
+	type="button"
+	class="list-group-item list-group-item-action"
+	onclick="window.location.href = '{% url 'reposUrl' %}{{ commit.id }}';">
+	{{commit.name}}
+	</button></li>
+	
+    {% endfor %}
+	
+  </ol>
+  {% else %}
+  
+    <h3> No Commits were found </h3>
+	
+  {% endif %}
+
+
+{% endblock %}

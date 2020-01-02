@@ -34,4 +34,23 @@
   </tr>
 </table>
 
+<h2> Commits </h2>
+<br>
+  {% if commits %}
+<div class="list-group">
+<ol>
+    {% for commit in commits %}
+		<li><button
+		type="button"
+		class="list-group-item list-group-item-action"
+		onclick="window.location.href = '{% url 'reposUrl' %}{{ repo.id }}/{{ commit.hash }}';">
+		{{commit.branch}} &nbsp; | &nbsp; {{commit.created_at}}</button></li>
+	     
+    {% endfor %}
+</ol>
+</div>
+  {% else %}
+    <h3> No Commits were found </h3>
+  {% endif %}
+
 {% endblock %}

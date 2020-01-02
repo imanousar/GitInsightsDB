@@ -19,7 +19,7 @@
 
     <tr>
     <th>Team Members</th>
-    <td> </td>
+    <td> {% for t in  team.members.all %} {{t}} &nbsp {% endfor %} </td>
   </tr>
     <tr>
     <th>Created at</th>
