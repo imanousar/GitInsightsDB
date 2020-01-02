@@ -12,10 +12,13 @@ h2 {
   color: #f05033;
   font-size: 60px;
   margin-left: 250px;
+  margin-top: 4pc;
 }
 
 #container{
     width:70%;
     padding:1em;
-    margin:0 auto;
+    margin-left: 250px;
+    align-self: center;
+    margin-top: 4pc;
 }​

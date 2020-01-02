@@ -29,8 +29,11 @@ class reposView():
 
     def selected(request, id):
         repo = Repo.objects.get(id=id)
-        user = User.objects.get(id=repo.owner)
-        return render(request, 'selectedRepo.html', {"repo": repo, "user":user})
+        if(repo.owner.type == "user"):
+            owner_name = User.objects.get(id=repo.owner)
+        else:
+            owner_name = Org.objects.get(id=repo.owner)
+        return render(request, 'selectedRepo.html', {"repo": repo, "owner_name":owner_name})
 
 
 class orgsView():

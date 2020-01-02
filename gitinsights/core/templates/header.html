@@ -9,85 +9,39 @@
     <meta name="author" content="GitInsightsTeam" />
 
     <title>{% block title %} Git Insight DB {% endblock %}</title>
-	
-	<!--	Bootstrap CSS Scripts	-->	
+
+	<!--	Bootstrap CSS Scripts	-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!--	Bootstrap CSS Scripts	-->	
-	
-	<!--	Sidebar CSS Script	-->	
+    <!--	Bootstrap CSS Scripts	-->
+
+	<!--	Sidebar CSS Script	-->
 	<link rel="stylesheet" type="text/css" href="{% static 'css/sidebar.css' %}">
-    <!--	Sidebar CSS Script	-->	
-	
-	<!--	Page CSS Script	-->	
+    <!--	Sidebar CSS Script	-->
+
+	<!--	Page CSS Script	-->
 	<link rel="stylesheet" type="text/css" href="{% static 'css/page.css' %}">
-    <!--	Page CSS Script	-->	
-	
+    <!--	Page CSS Script	-->
+
   </head>
   <body>
-                
+
 	<!-- Sidebar -->
    <div class="sidenav">
    <div align="center">
 	<div class="tm-logo-div text-xs-center">
 	  <img src="https://i.ibb.co/3C5Wg1h/tm-neaty-logo.png" alt="Logo">
-	  <a href="/api"><h1 class="tm-site-name">Git Insights DB</h1></a>   
-	</div>
-	</div>
-<button class="dropdown-btn">Commit
-	  <i class="fa fa-caret-down"></i>
-	</button>
-	<div class="dropdown-container">
-	  <a href="addCommit">Add Commit</a>
-	  <a href="searchCommit">Search Commit</a>
-	</div>
-
-<button class="dropdown-btn">Issue
-	  <i class="fa fa-caret-down"></i>
-	</button>
-	<div class="dropdown-container">
-	  <a href="addIssue">Add Issue</a>
-	  <a href="searchIssue">Search Issue</a>
-	</div>
-
-<button class="dropdown-btn">Organization
-	  <i class="fa fa-caret-down"></i>
-	</button>
-	<div class="dropdown-container">
-	  <a href="addOrganization">Add Organization</a>
-	  <a href="searchOrganization">Search Organization</a>
-	  <button class="dropdown-btn">Repo
-	  <i class="fa fa-caret-down"></i>
-	</button>
-	<div class="dropdown-container">
-	  <a href="addRepo">Add Repo</a>
-	  <a href="searchRepo">Search Repo</a>
+	  <a href="/api"><h1 class="tm-site-name">Git Insights DB</h1></a>
 	</div>
 	</div>
 
-<button class="dropdown-btn">Team
-	  <i class="fa fa-caret-down"></i>
-	</button>
-	<div class="dropdown-container">
-	  <a href="addTeam">Add Team</a>
-	  <a href="searchTeam">Search Team</a>
-	</div>
 
-<button class="dropdown-btn">User
-	  <i class="fa fa-caret-down"></i>
-	</button>
-	<div class="dropdown-container">
-	  <a href="addUser">Add User</a>
-	  <a href="searchUser">Search User</a>
-	  <button class="dropdown-btn">Repo
-	  <i class="fa fa-caret-down"></i>
-	</button>
-	<div class="dropdown-container">
-	  <a href="addRepo">Add Repo</a>
-	  <a href="searchRepo">Search Repo</a>
-	</div>
-	</div>
+  <br>
+  <a href="/api/User">Users</a>
 
-	<a href="contact">Contact Us</a>
+  <a href="/api/orgs">Organizations</a>
+
+  <a href="/api/repos">Repos</a>
+	<a href="/api/contact">Contact Us</a>
 </div>
 
 <!-- Sidebar -->
@@ -95,14 +49,14 @@
 {% block main %} main {% endblock %}
 
 
-<!--	JS Scripts	-->	
+<!--	JS Scripts	-->
 
-	  
-<!--	Bootstrap JS Scripts	-->			
+
+<!--	Bootstrap JS Scripts	-->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<!--	Bootstrap JS Scripts	-->	
+<!--	Bootstrap JS Scripts	-->
 
 
 <!--	Sidebar JS Script	-->
@@ -126,4 +80,4 @@ for (i = 0; i < dropdown.length; i++) {
 <!--	Sidebar JS Script	-->
 
 </body>
-</html>	
+</html>

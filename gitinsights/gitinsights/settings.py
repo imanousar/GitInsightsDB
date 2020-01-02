@@ -79,7 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'gitinsightsdb',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': '1997',
         'HOST': '127.0.0.1',
         'PORT': '3306'
     }
