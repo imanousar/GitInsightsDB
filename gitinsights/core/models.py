@@ -46,7 +46,7 @@ class Team(models.Model):
         unique_together = (('org', 'name'))
 
     def __str__(self):
-        return f"{self.org}/{self.name}"
+        return f"{self.org}: {self.name}"
 
 
 class Repo(models.Model):

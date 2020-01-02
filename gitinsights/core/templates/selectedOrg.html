@@ -7,7 +7,7 @@
 <table class="table table-bordered table-hover">
   <tr>
     <th>Organization Owners</th>
-    <td>{{ org.owners }}</td>
+    <td>{% for o in  org.owners.all %} {{o}} &nbsp {% endfor %}</td>
   </tr>
   <tr>
     <th>Organization Description</th>

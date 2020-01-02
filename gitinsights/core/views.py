@@ -45,9 +45,10 @@ class orgsView():
 
     def selected(request, org_name):
         org = Org.objects.get(name=org_name)
+        repos = Repo.objects.filter(id=org.id.id)
 
 #        teams = Team.objects.filter(org = org.name)
-        return render(request, 'selectedOrg.html', {"org": org})#, "teams": teams})
+        return render(request, 'selectedOrg.html', {"org": org, "repos": repos})#, "teams": teams})
 
 
 class indexView():
