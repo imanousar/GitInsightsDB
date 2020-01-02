@@ -20,6 +20,9 @@ class User(models.Model):
     email = models.CharField(unique=True, max_length=45)
     created_at = models.DateTimeField()
 
+    class Meta:
+        ordering = ['username']
+
     def __str__(self):
         return f"{self.username}"
 
@@ -30,6 +33,9 @@ class Org(models.Model):
     description = models.TextField(blank=True, null=True)
     name = models.CharField(unique=True, max_length=45)
     created_at = models.DateTimeField()
+
+    class Meta:
+        ordering = ['name']
 
     def __str__(self):
         return f"{self.name}"
@@ -44,6 +50,7 @@ class Team(models.Model):
 
     class Meta:
         unique_together = (('org', 'name'))
+        ordering = ['name']
 
     def __str__(self):
         return f"{self.org}: {self.name}"
@@ -60,6 +67,7 @@ class Repo(models.Model):
 
     class Meta:
         unique_together = (('name', 'owner'))
+        ordering = ['name']
 
     def __str__(self):
         return f"{self.name}"
@@ -72,6 +80,7 @@ class LanguageRepo(models.Model):
 
     class Meta:
         unique_together = (('language', 'repo'))
+        ordering = ['language']
 
     def __str__(self):
         return f"{self.language}: {self.lines_of_code} loc"
@@ -86,6 +95,7 @@ class Commit(models.Model):
 
     class Meta:
         unique_together = (('hash', 'repo'),)
+        ordering = ['branch','-created_at']
 
     def __str__(self):
         return f"{self.hash} - {self.created_at}"
@@ -106,6 +116,7 @@ class CommitFile(models.Model):
 
     class Meta:
         unique_together = (('commit', 'filename'))
+        ordering = ['filename']
 
     def __str__(self):
         return f"{self.filename}: {self.action}"
@@ -133,6 +144,7 @@ class Issue(models.Model):
 
     class Meta:
         unique_together = (('repo', 'title'))
+        ordering = ['created_at']
 
     def __str__(self):
         return f"{self.title}"

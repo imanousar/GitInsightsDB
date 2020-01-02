@@ -5,23 +5,23 @@
 
   {% if repos %}
   <ol>
-    
+
 	{%   for repo in repos %}
-	
+
 	<li><button
 	type="button"
 	class="list-group-item list-group-item-action"
 	onclick="window.location.href = '{% url 'reposUrl' %}{{ repo.id }}';">
 	{{repo.name}}
 	</button></li>
-	
+
     {% endfor %}
-	
+
   </ol>
   {% else %}
-  
+
     <h3> No repos were found </h3>
-	
+
   {% endif %}
 
 
