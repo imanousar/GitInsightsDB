@@ -60,13 +60,13 @@ def migrate_team():
             t = Team.objects.get(name=row['team'], org=Org.objects.get(id=row['org']))
             t.members.add(User.objects.get(id=row['user']))
             t.save()
-    
+
 def migrate_repo():
     filename = BASE_DIR + "repo.csv"
     with open(filename) as csv_file:
         csv_reader = csv.DictReader(csv_file, delimiter=',')
         for row in csv_reader:
-            row['is_public'] = False if row['is_public'] == 0 else True
+            False if row['is_public'] == 0 else True
             row['owner'] = Owner.objects.get(id=row['owner'])
             r = Repo(**row)
             r.save()
@@ -78,7 +78,7 @@ def migrate_repo():
             row['repo'] = Repo.objects.get(id=row['repo'])
             lr = LanguageRepo(**row)
             lr.save()
-    
+
 
 def migrate_commit():
     filename = BASE_DIR + "commit.csv"
