@@ -4,22 +4,40 @@
 {% block form %}
 
 <div class="container">
+<table class="table table-bordered table-hover">
+  <tr>
+    <th>Username</th>
+    <td>{{ user.username }}</td>
+  </tr>
+  <tr>
+    <th>Fullname</th>
+    <td>{{ user.fullname }}</td>
+  </tr>
+    <tr>
+    <th>Date of Birth</th>
+    <td>{{ user.date_of_birth }}</td>
+  </tr>
+    </tr>
+    <tr>
+    <th>Email</th>
+    <td>{{ user.email }}</td>
+  </tr>
+    <th>User's Creation Date</th>
+    <td>{{ user.created_at }}</td>
+  </tr>
+</table>
+</div>
 
-{{ user.username }} <br>
-{{ user.fullname }} <br>
-{{ user.date_of_birth }} <br>
-{{ user.email }} <br>
-{{ user.created_at }} <br>
 
 <br><br>
-<h1> Repos </h1>
+<h2> Repos </h2>
 <br>
   {% if repos %}
 <div class="list-group">
 <ol>
     {% for repo in repos %}
-	<li><button
-	type="button"
+	<li><button 
+	type="button" 
 	class="list-group-item list-group-item-action"
 	onclick="window.location.href = '/api/repos/{{ repo.id }}';">
 	{{repo.name}}
@@ -28,7 +46,7 @@
 </ol>
 </div>
   {% else %}
-    <h3> No repos where found </h3>
+    <h3> No reposs where found </h3>
   {% endif %}
 
 </div>
