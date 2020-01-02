@@ -11,6 +11,7 @@ urlpatterns = [
     path('orgs/', views.orgsView.get, name='orgsUrl'),
     path('orgs/<str:org_name>/', views.orgsView.selected, name="selectedOrgUrl"),
     path('orgs/<str:org_name>/<str:team_name>', views.orgsView.teamSelected, name="selectedOrgTeamUrl"),
+    path('repos/<int:id>/<str:hash>', views.reposView.commitSelected, name="selectedRepoCommitUrl"),
 
 
 

@@ -33,7 +33,16 @@ class reposView():
             owner_name = User.objects.get(id=repo.owner)
         else:
             owner_name = Org.objects.get(id=repo.owner)
-        return render(request, 'selectedRepo.html', {"repo": repo, "owner_name":owner_name})
+
+        commits = Commit.objects.filter(repo=repo.id)
+        commits = commits.all()
+        return render(request, 'selectedRepo.html', {"repo": repo, "owner_name":owner_name, "commits":commits})
+
+    def commitSelected(request, id, hash):
+        repo = Repo.objects.get(id=id)
+        commit = Commit.objects.get(repo=id, hash=hash)
+        return render(request, 'selectedCommit.html', {"commit": commit})
+
 
 
 class orgsView():
@@ -60,39 +69,7 @@ class indexView():
         return TemplateResponse(request, 'index.html')
 
 
-class commitView():
 
-    def addCommit(request):
-        return TemplateResponse(request, 'addCommit.html')
-
-    def searchCommit(request):
-        return TemplateResponse(request, 'searchCommit.html')
-
-
-class issueView():
-    def addIssue(request):
-        return TemplateResponse(request, 'addIssue.html')
-
-    def searchIssue(request):
-        return TemplateResponse(request, 'searchIssue.html')
-
-
-
-
-class teamView():
-    def addTeam(request):
-        return TemplateResponse(request, 'addTeam.html')
-
-    def searchTeam(request):
-        return TemplateResponse(request, 'searchTeam.html')
-
-
-class userView():
-    def addUser(request):
-        return TemplateResponse(request, 'addUser.html')
-
-    def searchUser(request):
-         return TemplateResponse(request, 'searchUser.html')
 
 
 class contactView():
