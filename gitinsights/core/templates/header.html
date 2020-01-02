@@ -30,18 +30,18 @@
    <div align="center">
 	<div class="tm-logo-div text-xs-center">
 	  <img src="https://i.ibb.co/3C5Wg1h/tm-neaty-logo.png" alt="Logo">
-	  <a href="/api"><h1 class="tm-site-name">Git Insights DB</h1></a>
+	  <a href="{% url 'core:index' %}"><h1 class="tm-site-name">Git Insights DB</h1></a>
 	</div>
 	</div>
 
 
   <br>
-  <a href="/api/User">Users</a>
+  <a href="{% url 'core:users' %}">Users</a>
 
-  <a href="/api/orgs">Organizations</a>
+  <a href="{% url 'core:orgs' %}">Organizations</a>
 
-  <a href="/api/repos">Repos</a>
-	<a href="/api/contact">Contact Us</a>
+  <a href="{% url 'core:repo' %}">Repos</a>
+	<a href="{% url 'core:contact' %}">Contact Us</a>
 </div>
 
 <!-- Sidebar -->
