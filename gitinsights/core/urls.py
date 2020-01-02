@@ -1,18 +1,18 @@
 from django.urls import path
 from . import views
 
-app_name = 'core'
+
 urlpatterns = [
 
-    path('user/', views.usersView.get, name='users'),
-    path('user/<str:username>/', views.usersView.selected, name="selectedUser"),
-    path('repos/', views.reposView.get, name='repo'),
-    path('repos/<int:id>/', views.reposView.selected, name="selectedRepo"),
-    path('orgs/', views.orgsView.get, name='orgs'),
-    path('orgs/<str:org_name>/', views.orgsView.selected, name="selectedOrg"),
+    path('user/', views.usersView.get, name='usersUrl'),
+    path('user/<str:username>/', views.usersView.selected, name="selectedUserUrl"),
+    path('repos/', views.reposView.get, name='reposUrl'),
+    path('repos/<int:id>/', views.reposView.selected, name="selectedRepoUrl"),
+    path('orgs/', views.orgsView.get, name='orgsUrl'),
+    path('orgs/<str:org_name>/', views.orgsView.selected, name="selectedOrgUrl"),
 
 
 
-    path('', views.indexView.index, name='index'),
-    path('contact/', views.contactView.contact, name='contact')
+    path('', views.indexView.index, name='indexUrl'),
+    path('contact/', views.contactView.contact, name='contactUrl')
 ]

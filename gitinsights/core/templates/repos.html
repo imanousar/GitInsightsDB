@@ -11,7 +11,7 @@
 	<li><button
 	type="button"
 	class="list-group-item list-group-item-action"
-	onclick="window.location.href = '/api/repos/{{ repo.id }}';">
+	onclick="window.location.href = '{% url 'reposUrl' %}{{ repo.id }}';">
 	{{repo.name}}
 	</button></li>
 	

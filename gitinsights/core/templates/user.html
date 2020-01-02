@@ -10,7 +10,7 @@
 	<li><button
 	type="button"
 	class="list-group-item list-group-item-action"
-	onclick="window.location.href = '/api/User/{{ user.username }}';">
+	onclick="window.location.href = '{% url 'usersUrl' %}{{ user.username }}';">
 	{{user.username}}
 	</button></li>
     {% endfor %}
