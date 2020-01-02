@@ -96,3 +96,8 @@ class contactView():
 
     def contact(request):
         return TemplateResponse(request, 'contact.html')
+		
+class searchView():
+
+    def get(request):
+        return TemplateResponse(request, 'search.html')

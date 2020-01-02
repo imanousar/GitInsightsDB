@@ -14,5 +14,7 @@ urlpatterns = [
 
 
     path('', views.indexView.index, name='indexUrl'),
-    path('contact/', views.contactView.contact, name='contactUrl')
+    path('contact/', views.contactView.contact, name='contactUrl'),
+    path('search/', views.searchView.get, name="searchUrl"),
+
 ]

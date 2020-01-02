@@ -21,6 +21,10 @@
 	<!--	Page CSS Script	-->
 	<link rel="stylesheet" type="text/css" href="{% static 'css/page.css' %}">
     <!--	Page CSS Script	-->
+	
+	<!--	Searchbar Icon	-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--	Searchbar Icon	-->
 
   </head>
   <body>
@@ -34,14 +38,16 @@
 	</div>
 	</div>
 
-
-  <br>
+  <a href="{% url 'searchUrl' %}">Search</a>
+  
   <a href="{% url 'usersUrl' %}">Users</a>
 
   <a href="{% url 'orgsUrl' %}">Organizations</a>
 
   <a href="{% url 'reposUrl' %}">Repos</a>
-	<a href="{% url 'contactUrl' %}">Contact Us</a>
+  
+  <a href="{% url 'contactUrl' %}">Contact Us</a>
+  
 </div>
 
 <!-- Sidebar -->
