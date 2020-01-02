@@ -3,6 +3,7 @@ from django.shortcuts import render
 from .forms import *
 from .models import *
 from django.http import HttpResponseRedirect, HttpResponse
+from django.db.models import Q
 
 
 class usersView():
@@ -16,7 +17,7 @@ class usersView():
     def selected(request, username):
         user = User.objects.get(username=username)
         repos = Repo.objects.filter(owner=user.id)
-        #orgs = Org.objects.filter(owners=user.id)
+        # orgs = Org.objects.filter(owners=user.id)
         return render(request, 'selectedUser.html', {"user": user, "repos": repos})
 
 
@@ -30,21 +31,39 @@ class reposView():
     def selected(request, id):
         repo = Repo.objects.get(id=id)
         if(repo.owner.type == "user"):
-            owner_name = User.objects.get(id=repo.owner)
+            ownerName = User.objects.get(id=repo.owner)
         else:
-            owner_name = Org.objects.get(id=repo.owner)
+            ownerName = Org.objects.get(id=repo.owner)
 
         commits = Commit.objects.filter(repo=repo.id)
-        commits = commits.all()
-        return render(request, 'selectedRepo.html', {"repo": repo, "owner_name":owner_name, "commits":commits})
+        issues = Issue.objects.filter(repo=repo.id)
+        progLanguages = LanguageRepo.objects.filter(repo=repo.id)
 
-    def commitSelected(request, id, hash):
-        #if (Commit.objects.get(repo = Repo.objects.get(id=id)).hash == ' '+hash+' '):
-        commit = Commit.objects.get(hash=' '+hash+' ')
-        #else:
-        #  return HttpResponseRedirect(request, 'index.html')
-        return render(request, 'selectedCommit.html', {"commit": commit})
+        context = {"repo": repo,
+                   "ownerName": ownerName,
+                   "commits": commits,
+                   "issues": issues,
+                   "progLanguages": progLanguages,
+                   }
 
+        return render(request, 'selectedRepo.html', context)
+
+    def issueSelected(request, id, title):
+        repo = Repo.objects.get(id=id)
+        issue = Issue.objects.get(Q(repo=repo), Q(title=title))
+
+        return render(request, 'selectedIssue.html', {"issue": issue})
+
+    def languageSelected(request, id, language):
+        repo = Repo.objects.get(id=id)
+        progLanguages = LanguageRepo.objects.get(
+            Q(language=language), Q(repo=repo))
+
+        context = {
+            "repo": repo,
+            "progLanguages": progLanguages
+        }
+        return render(request, 'selectedLanguage.html', context)
 
 
 class orgsView():
@@ -65,19 +84,44 @@ class orgsView():
         team = Team.objects.get(org=org.id.id, name=team_name)
         return render(request, 'selectedTeam.html', {"team": team, "org": org})
 
+
+class commitView():
+
+    def get(request, id, hash):
+        repo = Repo.objects.get(id=id)
+        commit = Commit.objects.get(hash=hash)
+        commitFiles = CommitFile.objects.filter(commit=commit)
+        context = {
+            "repo": repo,
+            "commit": commit,
+            "commitFiles": commitFiles,
+        }
+        return render(request, 'selectedCommit.html', context)
+
+    def commitSelected(request, id, hash, filename):
+        repo = Repo.objects.get(id=id)
+        commit = Commit.objects.get(hash=hash)
+        commitFiles = CommitFile.objects.get(
+            Q(commit=commit), Q(filename=filename))
+
+        context = {
+            "repo": repo,
+            "commitFiles": commitFiles,
+        }
+        return render(request, 'selectedFile.html', context)
+
+
 class indexView():
 
     def index(request):
         return TemplateResponse(request, 'index.html')
 
 
-
-
-
 class contactView():
 
     def contact(request):
         return TemplateResponse(request, 'contact.html')
+
 
 class searchView():
 
