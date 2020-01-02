@@ -1,9 +1,8 @@
-{% extends "baseAdd.html" %}
+{% extends "header.html" %}
 {% block title %} Repo {% endblock %}
 {% block h2 %} Repo Selected {% endblock %}
-{% block form %}
+{% block main %}
 
-<div class="container">
 <table class="table table-bordered table-hover">
   <tr>
     <th>Repo Name</th>
@@ -34,5 +33,5 @@
     <td>{{ repo.created_at }}</td>
   </tr>
 </table>
-</div>
+
 {% endblock %}

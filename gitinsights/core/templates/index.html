@@ -1,40 +1,23 @@
 {% extends "header.html" %}
-{% block main %}
-
-		<div class="container">
-			<header>
-       	<h2 style="align-self: center; margin-top: 4pc";>{% block h2 %} Welcome to Git Insights DB {% endblock %} </h2>
-                 </header>
-
-								 	<br><br>
-									 <p style="font-size: x-large;  align-self: center;
-	 						    margin-left: 15%;
-	 						    margin-right: 15%;
-	 						    width: 95%; ">
-		                This page was created for the scope of an assignment in a DB
+{% block title %}  Welcome Page {% endblock %}
+{% block h2 %} Welcome to Git Insights DB {% endblock %}
+{% block main %}   
+						This page was created for the scope of an assignment in a DB
 		                cource of the Aristotle University of Thessaloniki. The purpose
 		                of this application is to store data used in Version Control
 		                Systems (VCS) such as GitHub, GitLab and BitBucket. All this
 		                saved data and information will allow easy and fast export of
 		                statistical measurements. Analyzing the data will become easier
 		                for people in the programming field.
-		              </p>
 
+				<center>
 				<img
-
 				src= "https://i.ibb.co/bLFF2sw/logos-welcome.png"
-				alt="Welcome Image"
-                style= "align-self: center;
-						    margin-left: 20%;
-						    margin-right: 20%;
-						    width: 85%;" >
-		</div>
+				alt="Welcome Image">
+				</center>
+		
 
-		<div style="position: absolute; color: black;  font-weight: 500; font-size: large; left:40%; bottom: 50px;">
-				<p>
-                  Created by: Letros Konstantinos, Manousaridis Ioannis and Sahinis Alexandros.
-				</p>
-        </div>
+		<p align="center"> Created by: Letros Konstantinos, Manousaridis Ioannis and Sahinis Alexandros.</p>
 
 {% endblock %}
 

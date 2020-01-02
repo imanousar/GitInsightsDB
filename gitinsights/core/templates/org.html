@@ -1,9 +1,8 @@
-{% extends "baseAdd.html" %}
+{% extends "header.html" %}
 {% block title %} User {% endblock %}
 {% block h2 %} List of all Orgs {% endblock %}
-{% block form %}
+{% block main %}
 
-<div class="container">
   {% if orgs %}
 <div class="list-group">
 <ol>
@@ -21,6 +20,4 @@
     <h3> No users where found </h3>
   {% endif %}
 
-
-</div>
 {% endblock %}

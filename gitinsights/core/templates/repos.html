@@ -1,19 +1,28 @@
-{% extends "baseAdd.html" %}
+{% extends "header.html" %}
 {% block title %} Repo {% endblock %}
 {% block h2 %} List of all Repos {% endblock %}
-{% block form %}
+{% block main %}
 
-<div class="container">
   {% if repos %}
-  <ul>
-    {%   for repo in repos %}
-    <li><a href="/api/repos/{{ repo.id }}"> {{repo.name}} </a> </li>
+  <ol>
+    
+	{%   for repo in repos %}
+	
+	<li><button
+	type="button"
+	class="list-group-item list-group-item-action"
+	onclick="window.location.href = '/api/repos/{{ repo.id }};">
+	{{repo.name}}
+	</button></li>
+	
     {% endfor %}
-  </ul>
+	
+  </ol>
   {% else %}
+  
     <h3> No repos where found </h3>
+	
   {% endif %}
 
 
-</div>
 {% endblock %}
