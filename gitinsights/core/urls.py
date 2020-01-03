@@ -5,6 +5,8 @@ from . import views
 urlpatterns = [
 
     path('users/', views.usersView.get, name='usersUrl'),
+    path('users/search', views.usersView.search, name='usersSearchUrl'),
+
     path('users/<str:username>/', views.usersView.selected, name="selectedUserUrl"),
     path('repos/', views.reposView.get, name='reposUrl'),
     path('repos/<int:id>/', views.reposView.selected, name="selectedRepoUrl"),

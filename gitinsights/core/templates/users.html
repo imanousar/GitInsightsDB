@@ -3,6 +3,28 @@
 {% block h2 %} List of all Users {% endblock %}
 {% block main %}
 
+
+
+<!-- Search bar-->
+<div class = "container" style="width:50%">
+
+<form role="search" method="GET" action="{% url 'usersSearchUrl' %}">
+  <div class="input-group">
+    <input type="text" class="form-control" name="q" placeholder="Search User.." value="{{ request.GET.q }}">
+    <div class="input-group-append">
+      <button class="btn btn-secondary" type="submit" style="background-color:#f05033"
+            onclick="window.location.href = '{% url 'usersUrl' %}{{ user.value }}';"}>
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+  </div>
+</form>
+</div>
+<br>
+
+
+<!-- Display Users -->
+
   {% if users %}
 <div class="list-group">
 <ol>

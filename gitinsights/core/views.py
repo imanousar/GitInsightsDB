@@ -19,6 +19,12 @@ class usersView():
         repos = Repo.objects.filter(owner=user.id)
         # orgs = Org.objects.filter(owners=user.id)
         return render(request, 'selectedUser.html', {"user": user, "repos": repos})
+    
+    def search(request):
+        query = request.GET.get('q')
+        users = User.objects.filter(Q(username__icontains=query))
+        context = {"users": users}
+        return render(request, 'users.html', context)
 
 
 class reposView():
@@ -31,16 +37,16 @@ class reposView():
     def selected(request, id):
         repo = Repo.objects.get(id=id)
         if(repo.owner.type == "user"):
-            ownerName = User.objects.get(id=repo.owner)
+            owner_name = User.objects.get(id=repo.owner)
         else:
-            ownerName = Org.objects.get(id=repo.owner)
+            owner_name = Org.objects.get(id=repo.owner)
 
         commits = Commit.objects.filter(repo=repo.id)
         issues = Issue.objects.filter(repo=repo.id)
         progLanguages = LanguageRepo.objects.filter(repo=repo.id)
 
         context = {"repo": repo,
-                   "ownerName": ownerName,
+                   "owner_name": owner_name,
                    "commits": commits,
                    "issues": issues,
                    "progLanguages": progLanguages,
