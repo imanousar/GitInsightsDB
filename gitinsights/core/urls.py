@@ -23,6 +23,7 @@ urlpatterns = [
     path('orgs/', views.orgsView.get, name='orgsUrl'),
     path('orgs/search', views.orgsView.search, name='orgsSearchUrl'),
     path('orgs/<str:org_name>/', views.orgsView.selected, name="selectedOrgUrl"),
+    path('orgs/<str:org_name>/teams/', views.orgsView.teams, name='orgTeamsUrl'),
     path('orgs/<str:org_name>/teams/<str:team_name>',
          views.orgsView.teamSelected, name="selectedOrgTeamUrl"),
 

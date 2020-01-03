@@ -4,21 +4,37 @@ from .forms import *
 from .models import *
 from django.http import HttpResponseRedirect, HttpResponse
 from django.db.models import Q
+from datetime import datetime
+from django.urls import reverse
 
 
 class usersView():
 
     def get(request):
-        users = User.objects.all()
-        context = {"users": users}
-
-        return render(request, 'users.html', context)
+        if request.method == 'POST':
+            form = UserForm(request.POST)
+            context = { 
+                "repos": Repo.objects.all(),
+                "form": form
+            }
+            return render(request, 'repos.html', context)
+        else:
+            users = User.objects.all()
+            form = UserForm(initial={'username':'alexsah'})
+            context = {"users": users, "form": form}
+            print(form)
+            return render(request, 'users.html', context)
 
     def selected(request, username):
         user = User.objects.get(username=username)
         repos = Repo.objects.filter(owner=user.id)
-        # orgs = Org.objects.filter(owners=user.id)
-        return render(request, 'selectedUser.html', {"user": user, "repos": repos})
+        form = RepoForm(initial={'owner': user.id.id})
+        context = {
+            "user": user, 
+            "repos": repos,
+            "form": form
+        }
+        return render(request, 'selectedUser.html', context)
 
     def search(request):
         query = request.GET.get('q')
@@ -30,9 +46,24 @@ class usersView():
 class reposView():
 
     def get(request):
-        repos = Repo.objects.all()
-        context = {"repos": repos}
-        return render(request, 'repos.html', context)
+        if (request.method == 'POST'):
+            r = RepoForm(request.POST)
+            if r.is_valid():
+                r = r.cleaned_data
+                repo = Repo(
+                    name=r['name'],
+                    owner=Owner.objects.get(id=r['owner']),
+                    stars=r['stars'],
+                    forks=r['forks'],
+                    is_public=r['is_public'],
+                    created_at=datetime.utcnow()
+                )
+                repo.save()
+                return HttpResponseRedirect(reverse('selectedRepoUrl',args=[repo.id]))
+        else:
+            repos = Repo.objects.all()
+            context = {"repos": repos}
+            return render(request, 'repos.html', context)
 
     def selected(request, id):
         repo = Repo.objects.get(id=id)
@@ -79,8 +110,35 @@ class orgsView():
     def selected(request, org_name):
         org = Org.objects.get(name=org_name)
         repos = Repo.objects.filter(id=org.id.id)
+        repo_form = RepoForm(initial={'owner': org.id.id})
         teams = Team.objects.filter(org=org.id.id)
-        return render(request, 'selectedOrg.html', {"org": org, "repos": repos, "teams": teams})
+        team_form = TeamForm(initial={'org': org.id.id})
+        context = {
+            "org": org, 
+            "repos": repos, 
+            "teams": teams,
+            "repo_form": repo_form,
+            "team_form": team_form
+        }
+        return render(request, 'selectedOrg.html', context)
+
+    def teams(request, org_name):
+        print("yo")
+        if (request.method == 'POST'):
+            print("yi")
+            t = TeamForm(request.POST)
+            if t.is_valid():
+                print("ya")
+                t = t.cleaned_data
+                print(t)
+                team = Team(
+                    name=t['name'],
+                    org=Org.objects.get(name=org_name),
+                    description=t['description'],
+                    created_at=datetime.utcnow()
+                )
+                team.save()
+                return HttpResponseRedirect(reverse('selectedOrgTeamUrl',args=[org_name, team.name]))
 
     def teamSelected(request, org_name, team_name):
         org = Org.objects.get(name=org_name)

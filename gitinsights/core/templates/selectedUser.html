@@ -31,7 +31,16 @@
 
 <br><br>
 <h2> Repos </h2>
+<!-- Add new user form -->
+
 <br>
+<form action="{% url 'reposUrl' %}" method="post">
+  {% csrf_token %}
+  {{ form.as_p }} 
+</form>
+<input type="submit" value="Create repo" class="float-right btn btn-danger">
+
+<br><br>
   {% if repos %}
 <div class="list-group">
 <ol>

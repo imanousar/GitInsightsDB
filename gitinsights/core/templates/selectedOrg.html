@@ -24,6 +24,15 @@
 </div>
 
 <h2> Repos </h2>
+
+<br>
+<form action="{% url 'reposUrl' %}" method="post">
+  {% csrf_token %}
+  {{ repo_form.as_p }} 
+</form>
+<input type="submit" value="Create repo" class="float-right btn btn-danger">
+<br>
+
 <br>
   {% if repos %}
 <div class="list-group">
@@ -43,7 +52,15 @@
   {% endif %}
 
 <h2> Teams </h2>
+
 <br>
+<form action="{% url 'orgTeamsUrl' org.name %}" method="post">
+  {% csrf_token %}
+  {{ team_form.as_p }}
+  <input type="submit" value="Create Team" class="float-right btn btn-danger"> 
+</form>
+<br><br>
+
   {% if teams %}
 <div class="list-group">
 <ol>
