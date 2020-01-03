@@ -16,8 +16,6 @@ urlpatterns = [
          views.commitView.get, name="selectedRepoCommitUrl"),
     path('repos/<int:id>/issues/<str:title>',
          views.reposView.issueSelected, name="selectedRepoIssueUrl"),
-    path('repos/<int:id>/progLanguages/<str:language>',
-         views.reposView.languageSelected, name="selectedRepoLanguageUrl"),
     path('repos/<int:id>/commits/<str:hash>/files/<str:filename>',
          views.commitView.commitSelected, name="selectedRepoCommitFileUrl"),
 

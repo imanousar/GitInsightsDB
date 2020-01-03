@@ -79,12 +79,13 @@
   <div class="list-group">
   <ol>
       {% for progLanguage in progLanguages %}
-      <li><button
-      type="button"
-      class="list-group-item list-group-item-action"
-      onclick="window.location.href = '{% url 'reposUrl' %}{{ repo.id }}/progLanguages/{{ progLanguage.language }}';">
-      {{progLanguage.language}} | Lines of code: {{ progLanguage.lines_of_code }}</button></li>
-
+      <table class="table table-bordered table-hover">
+        <tr>
+          <th>{{progLanguage.language}}</th>
+          <td>Lines of code: {{ progLanguage.lines_of_code }}</td>
+        </tr>
+        <tr>
+          </table>
       {% endfor %}
   </ol>
   </div>

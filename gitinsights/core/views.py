@@ -60,17 +60,7 @@ class reposView():
 
         return render(request, 'selectedIssue.html', {"issue": issue})
 
-    def languageSelected(request, id, language):
-        repo = Repo.objects.get(id=id)
-        progLanguages = LanguageRepo.objects.get(
-            Q(language=language), Q(repo=repo))
-
-        context = {
-            "repo": repo,
-            "progLanguages": progLanguages
-        }
-        return render(request, 'selectedLanguage.html', context)
-
+    
     def search(request):
         query = request.GET.get('q')
         repos = Repo.objects.filter(Q(name__icontains=query))
