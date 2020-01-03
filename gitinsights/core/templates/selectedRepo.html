@@ -58,7 +58,7 @@
 
   <form action="{% url 'repoIssuesUrl' repo.id %}" method="post">
     {% csrf_token %}
-    {{ issue_form.as_p }} 
+    {{ issue_form.as_p }}
     <input type="submit" value="Create issue" class="float-right btn btn-danger">
   </form>
   <br><br>
@@ -86,15 +86,17 @@
     {% if progLanguages %}
   <div class="list-group">
   <ol>
+    <table class="table table-bordered table-hover">
+
       {% for progLanguage in progLanguages %}
-      <table class="table table-bordered table-hover">
         <tr>
           <th>{{progLanguage.language}}</th>
           <td>Lines of code: {{ progLanguage.lines_of_code }}</td>
         </tr>
         <tr>
-          </table>
       {% endfor %}
+    </table>
+
   </ol>
   </div>
     {% else %}

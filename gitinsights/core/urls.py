@@ -32,5 +32,6 @@ urlpatterns = [
 
     path('', views.indexView.index, name='indexUrl'),
     path('contact/', views.contactView.contact, name='contactUrl'),
+    path('stats/', views.statsView.get, name='statsUrl')
 
 ]

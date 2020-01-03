@@ -4,16 +4,118 @@ from .forms import *
 from .models import *
 from django.http import HttpResponseRedirect, HttpResponse
 from django.db.models import Q
-from datetime import datetime
+from datetime import *
 from django.urls import reverse
 
+
+class statsView():
+
+    def get(request):
+        oldest_user = User.objects.all().order_by("date_of_birth")[0]
+        youngest_user = User.objects.all().order_by("-date_of_birth")[0]
+        No_of_Users = len(User.objects.all())
+        No_of_Orgs = len(Org.objects.all())
+        No_of_Repos = len(Repo.objects.all())
+        No_of_Teams = len(Team.objects.all())
+        No_of_Commits = len(Commit.objects.all())
+        No_of_Langs = len(LanguageRepo.objects.all())
+
+        user_most_commits, number_of_commits = statsView.user_most_commits()
+        owner_most_repos, number_of_repos, type = statsView.owner_most_repos()
+        org_most_teams, number_of_teams = statsView.org_most_teams()
+        commits_year, commtis_six_months, commits_last_month = statsView.commits_counter()
+
+        context = {"oldest_user": oldest_user, "No_of_Users": No_of_Users,
+                   "youngest_user": youngest_user, "No_of_Orgs": No_of_Orgs,
+                   "No_of_Teams": No_of_Teams, "No_of_Commits": No_of_Commits,
+                   "No_of_Repos": No_of_Repos, "No_of_Langs": No_of_Langs,
+                   "user_most_commits": user_most_commits,
+                   "number_of_commits": number_of_commits,
+                   "owner_most_repos": owner_most_repos,
+                   "number_of_repos": number_of_repos,
+                   "type": type, "org_most_teams": org_most_teams,
+                   "number_of_teams": number_of_teams,
+                   "commits_year": commits_year,
+                   "commtis_six_months": commtis_six_months,
+                   "commits_last_month": commits_last_month,
+                 }
+        return render(request, 'stats.html', context)
+
+    def user_most_commits():
+
+        users_all = User.objects.all()
+        orgs_all = Org.objects.all()
+        users_commits_by_id = []
+
+        for i in range(1,len(users_all)+len(orgs_all)+1):
+            users_commits_by_id.append(Commit.objects.filter(user = i).count())
+
+        max_commits = max(users_commits_by_id)
+        maxpos = users_commits_by_id.index(max(users_commits_by_id))
+        user = User.objects.get(id=maxpos)
+
+        return user.username, max_commits
+
+    def owner_most_repos():
+
+        users_all = User.objects.all()
+        orgs_all = Org.objects.all()
+        owner_by_repos = []
+
+        for i in range(1,len(users_all)+len(orgs_all)+1):
+            owner_by_repos.append(Repo.objects.filter(owner=i).count())
+
+        max_repos = max(owner_by_repos)
+        maxpos = owner_by_repos.index(max(owner_by_repos))
+
+        if(Owner.objects.get(id=maxpos).type == "org"):
+            org = Org.objects.get(id=maxpos)
+            return org.name, max_repos, "org"
+        else:
+            user = User.objects.get(id=maxpos)
+            return user.username, max_repos, "user"
+
+    def org_most_teams():
+
+        users_all = User.objects.all()
+        orgs_all = Org.objects.all()
+        teams_by_orgs = []
+        orgs_IDs = []
+        for i in range(1,len(users_all)+len(orgs_all)+1):
+            if(Owner.objects.get(id=i).type == "org"):
+                teams_by_orgs.append(Team.objects.filter(org=i).count())
+                orgs_IDs.append(i)
+
+        max_teams = max(teams_by_orgs)
+
+        maxpos = teams_by_orgs.index(max(teams_by_orgs))
+        max_ID = orgs_IDs[maxpos]
+        org = Org.objects.get(id=max_ID)
+
+        return org.name, max_teams
+
+    def commits_counter():
+        now = datetime.now()
+        six_months_month = now.month-6 if now.month-6 > 0 else now.month+6
+        last_years_month = now.month-1 if now.month-1 > 0 else now.month+11
+
+
+        year = datetime(now.year-1, now.month, now.day, now.hour, now.minute, now.second)
+        six_months = datetime(now.year, six_months_month, now.day, now.hour, now.minute, now.second)
+        last_month = datetime(now.year, last_years_month, now.day, now.hour, now.minute, now.second)
+
+        commits_year = len(Commit.objects.filter(created_at__range=(year, now)))
+        commtis_six_months = len(Commit.objects.filter(created_at__range=(six_months, now)))
+        commits_last_month = len(Commit.objects.filter(created_at__range=(last_month, now)))
+
+        return commits_year, commtis_six_months, commits_last_month
 
 class usersView():
 
     def get(request):
         if request.method == 'POST':
             form = UserForm(request.POST)
-            context = { 
+            context = {
                 "repos": Repo.objects.all(),
                 "form": form
             }
@@ -30,7 +132,7 @@ class usersView():
         repos = Repo.objects.filter(owner=user.id)
         form = RepoForm(initial={'owner': user.id.id})
         context = {
-            "user": user, 
+            "user": user,
             "repos": repos,
             "form": form
         }
@@ -114,7 +216,7 @@ class reposView():
 
         return render(request, 'selectedIssue.html', {"issue": issue})
 
-    
+
     def search(request):
         query = request.GET.get('q')
         repos = Repo.objects.filter(Q(name__icontains=query))
@@ -132,13 +234,13 @@ class orgsView():
 
     def selected(request, org_name):
         org = Org.objects.get(name=org_name)
-        repos = Repo.objects.filter(id=org.id.id)
+        repos = Repo.objects.filter(owner=org.id.id)
         repo_form = RepoForm(initial={'owner': org.id.id})
         teams = Team.objects.filter(org=org.id.id)
         team_form = TeamForm(initial={'org': org.id.id})
         context = {
-            "org": org, 
-            "repos": repos, 
+            "org": org,
+            "repos": repos,
             "teams": teams,
             "repo_form": repo_form,
             "team_form": team_form
