@@ -2,8 +2,8 @@ from django.db import models
 
 class Owner(models.Model):
     OWNER_TYPE_CHOICES=[
-        ('u', 'user'),
-        ('o', 'org')
+        ('user', 'user'),
+        ('org', 'org')
     ]
     id = models.BigAutoField(primary_key=True)
     type = models.CharField(max_length=4, choices=OWNER_TYPE_CHOICES)
@@ -103,12 +103,12 @@ class Commit(models.Model):
 
 class CommitFile(models.Model):
     ACTION_CHOICES = [
-        ('c', 'create'),
-        ('u', 'update'),
-        ('r', 'rename'),
-        ('d', 'delete'),
-        ('h', 'help'),
-        ('o', 'other')
+        ('create', 'create'),
+        ('update', 'update'),
+        ('rename', 'rename'),
+        ('delete', 'delete'),
+        ('help', 'help'),
+        ('other', 'other')
     ]
     commit = models.ForeignKey(Commit, models.CASCADE)
     filename = models.CharField(max_length=45)
@@ -124,15 +124,15 @@ class CommitFile(models.Model):
 
 class Issue(models.Model):
     STATE_CHOICES = [
-        ('o', 'open'),
-        ('c', 'closed')
+        ('open', 'open'),
+        ('closed', 'closed')
     ]
     LABEL_CHOICES = [
-        ('b', 'bug'),
-        ('f', 'feature'),
-        ('d', 'documentation'),
-        ('h', 'help'),
-        ('o', 'other')
+        ('bug', 'bug'),
+        ('feature', 'feature'),
+        ('documentation', 'documentation'),
+        ('help', 'help'),
+        ('other', 'other')
     ]
     repo = models.ForeignKey('Repo', models.CASCADE)
     title = models.CharField(max_length=45)
