@@ -4,8 +4,8 @@ from django import forms
 class UserForm(forms.Form):
     username = forms.CharField(max_length=45, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'username'}))
     fullname = forms.CharField(max_length=45, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'fullname'}))
-    date_of_birth = forms.DateField(widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'date'}))
-    email = forms.EmailField(widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'email'}))
+    date_of_birth = forms.DateField(widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'MM/DD/YYYY'}))
+    email = forms.EmailField(widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'someone@example.com'}))
 
 class ContactForm(forms.Form):
     name = forms.CharField(label="Your name", max_length=100)
