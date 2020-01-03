@@ -28,9 +28,9 @@
 <br>
 <form action="{% url 'reposUrl' %}" method="post">
   {% csrf_token %}
-  {{ repo_form.as_p }} 
+  {{ repo_form.as_p }}
+  <input type="submit" value="Create repo" class="float-right btn btn-danger"> 
 </form>
-<input type="submit" value="Create repo" class="float-right btn btn-danger">
 <br>
 
 <br>
