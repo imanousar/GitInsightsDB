@@ -114,17 +114,27 @@ class usersView():
 
     def get(request):
         if request.method == 'POST':
-            form = UserForm(request.POST)
-            context = {
-                "repos": Repo.objects.all(),
-                "form": form
-            }
-            return render(request, 'repos.html', context)
+            u = UserForm(request.POST)
+            print(u.is_valid())
+            print(u.cleaned_data)
+            if u.is_valid():
+                u = u.cleaned_data
+                owner = Owner(type='user')
+                owner.save()
+                user = User(
+                    id=owner,
+                    username=u['username'],
+                    fullname=u['fullname'],
+                    date_of_birth=u['date_of_birth'],
+                    email=u['email'],
+                    created_at=datetime.utcnow()
+                )
+                user.save()
+                return HttpResponseRedirect(reverse('selectedUserUrl', args=[user.username]))
         else:
             users = User.objects.all()
-            form = UserForm(initial={'username':'alexsah'})
+            form = UserForm()
             context = {"users": users, "form": form}
-            print(form)
             return render(request, 'users.html', context)
 
     def selected(request, username):

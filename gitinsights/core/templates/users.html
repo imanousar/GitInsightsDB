@@ -22,6 +22,12 @@
 </div>
 <br>
 
+<form action="{% url 'usersUrl' %}" method="post">
+  {% csrf_token %}
+  {{ form.as_p }} 
+  <input type="submit" value="Add user" class="float-right btn btn-danger">
+</form>
+<br><br>
 
 <!-- Display Users -->
 
