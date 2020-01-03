@@ -97,6 +97,11 @@ class orgsView():
         team = Team.objects.get(org=org.id.id, name=team_name)
         return render(request, 'selectedTeam.html', {"team": team, "org": org})
 
+    def search(request):
+        query = request.GET.get('q')
+        orgs = Org.objects.filter(Q(name__icontains=query))
+        context = {"orgs": orgs}
+        return render(request, 'orgs.html', context)
 
 class commitView():
 
