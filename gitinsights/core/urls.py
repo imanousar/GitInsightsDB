@@ -14,6 +14,8 @@ urlpatterns = [
     path('repos/<int:id>/', views.reposView.selected, name="selectedRepoUrl"),
     path('repos/<int:id>/commits/<str:hash>',
          views.commitView.get, name="selectedRepoCommitUrl"),
+    path('repos/<int:id>/issues/',
+         views.reposView.issues, name="repoIssuesUrl"),
     path('repos/<int:id>/issues/<str:title>',
          views.reposView.issueSelected, name="selectedRepoIssueUrl"),
     path('repos/<int:id>/commits/<str:hash>/files/<str:filename>',

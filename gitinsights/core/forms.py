@@ -30,16 +30,16 @@ class TeamForm(forms.Form):
     name = forms.CharField(max_length=45, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Team Name'}))
     description = forms.CharField(widget=forms.Textarea(attrs={'class':'form-control', 'placeholder':'Team Description'}))
 
-# class IssueForm(forms.Form):
-#     STATE_CHOICES = [
-#         ('open', 'open'),
-#         ('closed', 'closed')
-#     ]
-#     LABEL_CHOICES = [
-#         ('bug', 'bug'),
-#         ('feature', 'feature'),
-#         ('documentation', 'documentation'),
-#         ('help', 'help'),
-#         ('other', 'other')
-    
-
+class IssueForm(forms.Form):
+    LABEL_CHOICES = [
+        ('bug', 'bug'),
+        ('feature', 'feature'),
+        ('documentation', 'documentation'),
+        ('help', 'help'),
+        ('other', 'other')
+    ]
+    repo = forms.IntegerField(widget=forms.HiddenInput())
+    title = forms.CharField(max_length=45, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Issue Title'}))
+    description = forms.CharField(widget=forms.Textarea(attrs={'class':'form-control', 'placeholder':'Team Description'}))
+    label = forms.CharField(widget=forms.Select(choices=LABEL_CHOICES))    
+    state = forms.CharField(widget=forms.HiddenInput(), initial='open')

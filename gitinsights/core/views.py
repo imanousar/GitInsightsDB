@@ -74,6 +74,7 @@ class reposView():
 
         commits = Commit.objects.filter(repo=repo.id)
         issues = Issue.objects.filter(repo=repo.id)
+        issue_form = IssueForm(initial={'repo': id})
         progLanguages = LanguageRepo.objects.filter(repo=repo.id)
 
         context = {"repo": repo,
@@ -81,9 +82,31 @@ class reposView():
                    "commits": commits,
                    "issues": issues,
                    "progLanguages": progLanguages,
+                   "issue_form": issue_form
                    }
 
         return render(request, 'selectedRepo.html', context)
+
+    def issues(request, id):
+        if (request.method == 'POST'):
+            i = IssueForm(request.POST)
+            print("dasdas")
+            print(i.is_valid())
+            print(i.cleaned_data)
+            if i.is_valid():
+                print("dsdasda")
+                i = i.cleaned_data
+                issue = Issue(
+                    title=i['title'],
+                    repo=Repo.objects.get(id=id),
+                    description=i['description'],
+                    state=i['state'],
+                    label=i['label'],
+                    created_at=datetime.utcnow()
+                )
+                issue.save()
+                print("fsdfsdfsd")
+                return HttpResponseRedirect(reverse('selectedRepoIssueUrl',args=[id, issue.title]))
 
     def issueSelected(request, id, title):
         repo = Repo.objects.get(id=id)

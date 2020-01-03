@@ -55,7 +55,15 @@
 
   <h2> Issues </h2>
   <br>
-    {% if issues %}
+
+  <form action="{% url 'repoIssuesUrl' repo.id %}" method="post">
+    {% csrf_token %}
+    {{ issue_form.as_p }} 
+    <input type="submit" value="Create issue" class="float-right btn btn-danger">
+  </form>
+  <br><br>
+
+  {% if issues %}
   <div class="list-group">
   <ol>
       {% for issue in issues %}
