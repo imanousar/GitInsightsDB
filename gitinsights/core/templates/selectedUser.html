@@ -36,8 +36,8 @@
 <div class="list-group">
 <ol>
     {% for repo in repos %}
-	<li><button 
-	type="button" 
+	<li><button
+	type="button"
 	class="list-group-item list-group-item-action"
 	onclick="window.location.href = '/api/repos/{{ repo.id }}';">
 	{{repo.name}}
@@ -46,7 +46,7 @@
 </ol>
 </div>
   {% else %}
-    <h3> No users were found </h3>
+    <h3> No Repos were found </h3>
   {% endif %}
 
 </div>

@@ -19,7 +19,7 @@ class usersView():
         repos = Repo.objects.filter(owner=user.id)
         # orgs = Org.objects.filter(owners=user.id)
         return render(request, 'selectedUser.html', {"user": user, "repos": repos})
-    
+
     def search(request):
         query = request.GET.get('q')
         users = User.objects.filter(Q(username__icontains=query))
@@ -70,6 +70,13 @@ class reposView():
             "progLanguages": progLanguages
         }
         return render(request, 'selectedLanguage.html', context)
+
+    def search(request):
+        query = request.GET.get('q')
+        repos = Repo.objects.filter(Q(name__icontains=query))
+        context = {"repos": repos}
+        return render(request, 'repos.html', context)
+
 
 
 class orgsView():
@@ -127,9 +134,3 @@ class contactView():
 
     def contact(request):
         return TemplateResponse(request, 'contact.html')
-
-
-class searchView():
-
-    def get(request):
-        return TemplateResponse(request, 'search.html')
