@@ -41,4 +41,4 @@ Stats Page            |  Repo Page
 
 ## Licenses
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/mpalaourg/FuzzySystems_Classification/blob/master/LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)]
