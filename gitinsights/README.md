@@ -6,14 +6,14 @@
 
 ## Setup
 
-- Install dependencies on a new venv or your global python environment:
+- Install dependencies on a new virtual environment or your global Python3 environment:
   ```
   pip install -r requirements.txt
   ```
-- Start the database [MySQL Workbench] 
-- Login to your local account and then load and run the [GitInsightsDB.sql](https://github.com/imanousar/GitInsightsDB/blob/master/GitInsightsDB.sql) script to create a `gitinsights` database
-- Add the database credentials to the `gitinsights/settings.py` under the database variables section
- 
+- Start the database [MySQL Workbench] .
+- Start your local connection and then load and run the [GitInsightsDB.sql](https://github.com/imanousar/GitInsightsDB/blob/master/GitInsightsDB.sql) script to create the `gitinsights` database.
+- Add the database credentials to the `GitInsightsDB/gitinsights/settings.py` under the database variables section.
+
  ### Example
  ```python
   DATABASES = {
@@ -22,7 +22,7 @@
         'NAME': 'gitinsightsdb',
         'USER': 'root',
         'PASSWORD': 'root',
-        'HOST': '127.0.0.1',
+        'HOST': 'localhost',
         'PORT': '3306'
     }
 }
@@ -32,5 +32,5 @@
 - Run `python major_migration.py` to populate the database with our existing data.
 - Run `python manage.py createsuperuser` to create a superuser (optional).
 - Run `python manage.py runserver`.
-- Login to the user api: http://127.0.0.1:8000/api/ .
-- Login to the defaualt django admin site: http://127.0.0.1:8000/admin/ .
+- Login to the user api: http://localhost:8000/api/ .
+- Login to the default django admin site: http://localhost:8000/admin/ .

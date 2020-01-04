@@ -97,12 +97,15 @@ class statsView():
     def commits_counter():
         now = datetime.now()
         six_months_month = now.month-6 if now.month-6 > 0 else now.month+6
+        year_six_months_month = now.year-1  if now.month-6 <= 0 else now.year
+
         last_years_month = now.month-1 if now.month-1 > 0 else now.month+11
+        year_last_months_month = now.year-1  if now.month-1 <= 0 else now.year
 
 
         year = datetime(now.year-1, now.month, now.day, now.hour, now.minute, now.second)
-        six_months = datetime(now.year, six_months_month, now.day, now.hour, now.minute, now.second)
-        last_month = datetime(now.year, last_years_month, now.day, now.hour, now.minute, now.second)
+        six_months = datetime(year_six_months_month, six_months_month, now.day, now.hour, now.minute, now.second)
+        last_month = datetime(year_last_months_month, last_years_month, now.day, now.hour, now.minute, now.second)
 
         commits_year = len(Commit.objects.filter(created_at__range=(year, now)))
         commtis_six_months = len(Commit.objects.filter(created_at__range=(six_months, now)))
