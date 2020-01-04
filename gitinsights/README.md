@@ -12,18 +12,18 @@
   ```
 - Start the database [MySQL Workbench] .
 - Start your local connection and then load and run the [GitInsightsDB.sql](https://github.com/imanousar/GitInsightsDB/blob/master/GitInsightsDB.sql) script to create the `gitinsights` database.
-- Add the database credentials to the `GitInsightsDB/gitinsights/settings.py` under the database variables section.
+- Add the database credentials to the `gitinsights/gitinsights/settings.py` under the database variables section.
 
  ### Example
  ```python
   DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'gitinsightsdb',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',
-        'PORT': '3306'
+        'NAME': os.environ['DB_NAME'],
+        'USER': os.environ['DB_USER'],
+        'PASSWORD': os.environ['DB_PASSWORD'],
+        'HOST': os.environ['DB_HOST'],
+        'PORT': os.environ['DB_PORT']
     }
 }
 ```
