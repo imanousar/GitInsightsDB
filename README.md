@@ -9,7 +9,7 @@ This is a fully functional database system written in MySQL, Django, HTML/CSS an
 This database system was created for the scope of an assignment in a DB cource of the Aristotle University of Thessaloniki during the 2019-20 academic year. The purpose of this application is to store data used in Version Control Systems (VCS) such as GitHub, GitLab and BitBucket. All this saved data and information will allow easy and fast export of statistical measurements. Analyzing the data will become easier for people in the programming field.
 
 ### Installation / Setup
-You can find instructions to install/setup the database system [gitinsights](https://github.com/imanousar/GitInsightsDB/tree/master/gitinsights) folder.
+You can find instructions to install/setup the database system in the [gitinsights](https://github.com/imanousar/GitInsightsDB/tree/master/gitinsights) folder.
 
 <br>
 
