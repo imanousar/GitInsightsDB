@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  {% load static %}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="author" content="GitInsightsTeam" />
+
+    <title>{% block title %} Git Insight DB {% endblock %}</title>
+
+	<!--	Bootstrap CSS Scripts	-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--	Bootstrap CSS Scripts	-->
+
+	<!--	Sidebar CSS Script	-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/sidebar.css' %}">
+    <!--	Sidebar CSS Script	-->
+
+	<!--	Page CSS Script	-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/page.css' %}">
+    <!--	Page CSS Script	-->
+
+	<!--	Searchbar Icon	-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--	Searchbar Icon	-->
+
+	<!--	Favicon Icon	-->
+	<link rel="icon" href="https://i.ibb.co/3C5Wg1h/tm-neaty-logo.png">
+	<!--	Favicon Icon	-->
+
+  </head>
+  <body>
+
+	<!-- Sidebar -->
+   <div class="sidenav">
+   <div align="center">
+	<div class="tm-logo-div text-xs-center">
+	  <img src="https://i.ibb.co/3C5Wg1h/tm-neaty-logo.png" alt="Logo">
+	  <a href="{% url 'indexUrl' %}"><h1 class="tm-site-name">Git Insights DB</h1></a>
+	</div>
+	</div>
+
+
+  <a href="{% url 'usersUrl' %}">Users</a>
+
+  <a href="{% url 'orgsUrl' %}">Organizations</a>
+
+  <a href="{% url 'reposUrl' %}">Repos</a>
+  <a href="{% url 'statsUrl' %}">Stats</a>
+
+  <a href="{% url 'contactUrl' %}">Contact Us</a>
+
+</div>
+
+<!-- Sidebar -->
+
+<div class="main">
+<h2>{% block h2 %}  Header-Title {% endblock %}</h2>
+<div id="container">
+{% block main %} main {% endblock %}
+</div>
+</div>
+<!--	JS Scripts	-->
+
+
+<!--	Bootstrap JS Scripts	-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!--	Bootstrap JS Scripts	-->
+
+
+<!--	Sidebar JS Script	-->
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+</script>
+<!--	Sidebar JS Script	-->
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+.header {
+  padding: 60px;
+  text-align: center;
+  color: #f05033;
+  font-size: 30px;
+}
+
+h2 {
+  padding-top: 0px;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  color: #f05033;
+  font-size: 60px;
+  margin-top: 2pc;
+}
+
+#container{
+    width:100%;
+    padding:1em;
+    align-self: center;
+    margin-top: 4pc;
+	text-align: justify;
+}​

@@ -1,0 +1,62 @@
+{% extends "header.html" %}
+{% block title %} Stats {% endblock %}
+{% block h2 %} Stats for GitInsightsDB {% endblock %}
+{% block main %}
+
+
+
+
+<table class="table table-bordered table-hover">
+
+  <tr>
+    <td><b>Total Number of Users: </b>  {{No_of_Users}}</td>
+    <td><b>Total Number of Orgs:  </b>   {{No_of_Orgs}}</td>
+    <td><b>Total Number of Teams: </b>  {{No_of_Teams}}</td></tr><tr>
+    <td><b>Total Number of Repos:  </b>   {{No_of_Repos}}</td>
+    <td><b>Total Number of Commits:  </b>   {{No_of_Commits}}</td>
+    <td><b>Total Number of Programming Languages used:  </b>   {{No_of_Langs}}</td>
+
+  </tr>
+  </table>
+
+  <br><br>
+
+  <table class="table table-bordered table-hover">
+
+
+    <tr>
+    <td> <b>Oldest user:</b> {{ oldest_user.username }}</td>
+    <td> <b>Date of Birth:</b> {{oldest_user.date_of_birth}}</td>
+
+  </tr>
+  <tr>
+    <td> <b>Youngest user:</b> {{ youngest_user.username }}</td>
+
+    <td> <b>Date of Birth:</b> {{youngest_user.date_of_birth}}</td>
+  </tr>
+</table>
+<br>
+
+<table class="table table-bordered table-hover">
+  <tr>
+    <td> <b>User with most commits:</b> {{ user_most_commits }}</td>
+    <td> <b>Number of commits:</b> {{ number_of_commits }}</td>
+  <tr></tr>
+      <td> <b>Owner with most repos:</b> {{ owner_most_repos }} - [{{ type }}]</td>
+      <td> <b>Number of repos:</b> {{ number_of_repos }}</td>
+      </tr>
+    </tr>
+        <td> <b>Org with most Teams:</b> {{ org_most_teams }}</td>
+        <td> <b>Number of Teams:</b> {{ number_of_teams }}</td>
+        </tr>
+</table>
+<br>
+<table class="table table-bordered table-hover">
+  <tr><td> <b>Number of commits during the past year (365 days): </b> {{ commits_year }} </td>
+    </tr><td> <b>Number of commits during the past 6 months: </b> {{ commtis_six_months }} </td>
+    </tr><tr><td> <b>Number of commits during the past month: </b> {{ commits_last_month }} </td>
+
+</tr>
+</table>
+
+{% endblock %}

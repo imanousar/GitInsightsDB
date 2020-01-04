@@ -1,0 +1,11 @@
+id,username,fullname,date_of_birth,email,created_at
+1,konsletr,Konstantinos Letros,1997-02-10,konsletr@ece.auth.gr,2006-10-28 20:07:00
+2,imanousar,Ioannis Manousaridis,1997-01-11,imanousar@ece.auth.gr,2005-08-04 06:53:00
+3,alexsah,Alexandros Sahinis,1997-06-09,alexsach@ece.auth.gr,2007-03-13 20:07:00
+4,dimpap,Dimitris Papagiannakis,1986-08-01,dimpap@gmail.com,2010-01-20 21:16:00
+5,georgepap,Georgios Papadopoulos,2001-03-03,geopap4@gmail.com,2009-11-18 19:11:00
+6,johnbin,Ioannis Binousidis,1988-07-02,binous@gmail.com,2007-06-05 16:37:00
+7,batman,Bruce Wayne,1980-02-01,batman@gmail.com,2009-01-27 09:45:00
+8,joker,Arthur Fleck,1964-02-06,joker@gmail.com,2006-12-12 18:36:00
+9,superman,Clark Kent,1974-01-09,superman@gmail.com,2010-10-14 16:53:00
+10,flash,Barry Allen,1989-09-11,flash@gmail.com,2007-08-26 13:22:00

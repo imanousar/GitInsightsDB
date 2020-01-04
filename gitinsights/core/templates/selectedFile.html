@@ -1,0 +1,29 @@
+{% extends "header.html" %}
+{% block title %} Commit File {% endblock %}
+{% block h2 %} Commit File Selected {% endblock %}
+{% block main %}
+
+
+<div class="container">
+    <table class="table table-bordered table-hover">
+      <tr>
+        <th>Filename</th>
+        <td>{{ commitFiles.filename }}</td>
+      </tr>
+      <tr>
+        <th>Commit </th>
+        <td>{{ commitFiles.commit }}</td>
+      </tr>
+        <tr>
+          <th>Repo </th>
+        <td>{{repo.name}} &nbsp; - &nbsp; {{repo.created_at }} </td>
+      </tr>
+        </tr>
+        <tr>
+          <th>Action</th>
+        <td>{{ commitFiles.action }}</td>
+      </tr>
+    </table>
+    </div>
+
+{% endblock %}
