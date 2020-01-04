@@ -1,6 +1,6 @@
 # GitInsightsDB
 
-This is a fully functional database system writen in Django, HTML/CSS and Bootstrap. 
+This is a fully functional database system writen in MySQL, Django, HTML/CSS and Bootstrap. 
 
 [![Version](https://img.shields.io/badge/version-0.9.0-green.svg)](https://bitbucket.org/lbesson/ansi-colors)
 
