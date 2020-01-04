@@ -18,7 +18,7 @@ Relational Model|
 
 <br>
 
-Below you can see come snapshots of the frontend:
+Below you can see some snapshots of the frontend:
 
 Welcome Page        |  Users Page
 :-------------------------:|:-------------------------:
