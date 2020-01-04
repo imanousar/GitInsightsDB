@@ -1,10 +1,12 @@
 from django import forms
+from django.forms.widgets import SelectDateWidget
+import datetime
 
 
 class UserForm(forms.Form):
     username = forms.CharField(max_length=45, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'username'}))
     fullname = forms.CharField(max_length=45, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'fullname'}))
-    date_of_birth = forms.DateField(widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'MM/DD/YYYY'}))
+    date_of_birth = forms.DateField(widget=SelectDateWidget(years=range(1900,datetime.date.today().year ), empty_label=("Choose Year", "Choose Month", "Choose Day"),attrs={'style': 'width: 20%; display: inline-block;'}))
     email = forms.EmailField(widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'someone@example.com'}))
 
 class ContactForm(forms.Form):
